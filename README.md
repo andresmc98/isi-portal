@@ -3,7 +3,7 @@
 # Instalaciones necesarias 🛠
 
 - node 18.14 LTS 
-- Angular 15.1.4
+- Angular 16
 
 # Como empezar a trabajar 🔨
 
