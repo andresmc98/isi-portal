@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TitleComponent } from './title/title.component';
 import { IconMenuComponent } from './icon-menu/icon-menu.component';
+import { ClubMenuComponent } from './club-menu/club-menu.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { IconMenuComponent } from './icon-menu/icon-menu.component';
     HeaderComponent,
     TitleComponent,
     IconMenuComponent,
+    ClubMenuComponent,
   ],
   imports: [CommonModule, AppMaterialModule, RouterModule, MatToolbarModule],
   exports: [
@@ -23,6 +25,7 @@ import { IconMenuComponent } from './icon-menu/icon-menu.component';
     HeaderComponent,
     TitleComponent,
     IconMenuComponent,
+    ClubMenuComponent,
   ],
 })
 export class SharedModule {}
