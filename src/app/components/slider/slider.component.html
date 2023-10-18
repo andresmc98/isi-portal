@@ -1,8 +1,10 @@
 <carousel>
-    <slide class="carousel-card" *ngFor="let item of articles">
-        <img class="display: block; width: 100%;" src="{{item.img}}" alt="">
-        <div class="carousel-text">
-        <h2>{{item.title}}</h2>
-        </div>
-    </slide>
+  <slide class="carousel-slide" *ngFor="let item of articles">
+    <div class="slide-content">
+      <img src="{{ item.img }}" alt="" />
+      <div class="slide-caption">
+        <h2>{{ item.title }}</h2>
+      </div>
+    </div>
+  </slide>
 </carousel>
