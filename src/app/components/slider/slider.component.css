@@ -1,36 +1,31 @@
-.carousel-wrapper {
-    width: 300vw;
-    display: flex;
-    gap: 5%;
-  }
-  .carousel-card {
-    height: 20rem;
-    width: 100%;
-    /* background-color: brown; */
-    border-radius: 5%;
-    overflow: hidden;
-  }
-  .carousel-card img {
-    height: 80%;
-    width: 100%;
-    object-fit: fill;
-  }
-  .carousel-text {
-    height: 20%;
-    /* padding: 0.3rem 0.5rem; */
-    background-color: var(--amarillo-principal);
-    display: flex;
-    align-items: center;
-  }
-  .carousel-text h2 {
-    font-size: 1.3rem;
-    padding: 0 0.5rem;
-  
-    /* Temportal */
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limita a dos líneas */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis; /* Agrega tres puntos suspensivos en caso de desbordamiento */
-    white-space: normal;
-  }
+carousel {
+  margin: 1rem;
+  width: 15rem;
+  height: 20vh;
+}
+img {
+  min-height: 15rem !important;
+  max-height: 15rem !important;
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-slide {
+  position: relative;
+}
+
+.slide-content {
+  position: relative;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+}
