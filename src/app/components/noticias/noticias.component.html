@@ -1,1 +1,10 @@
 <p>noticias works!</p>
+<h1>Data Payload</h1>
+<ul>
+    <li *ngFor="let item of noticias">
+        {{item.titulo}}
+        <img src="http://localhost:3000{{item.image.sizes.thumbnail.url}}" alt="">
+        {{item.contenido[0].children[0].text}}
+
+    </li>
+</ul>

@@ -1,36 +1,38 @@
-header {
-    background-color: var(--azul-principal);
-    display: flex;
-    width: 100vw;
-    height: 10vh;
-    justify-content: space-between;
-  }
-  
-  .logos {
-    display: flex;
-    width: 40%;
-    margin: 0 4%;
-    align-items: center;
-  
-    gap: 7%;
-  }
-  .logos > img {
-    height: 80%;
-  }
-  #yellow-line {
-    border-left: 0.2rem solid var(--amarillo-principal);
-    height: 80%;
-  }
-  
-  .div-navbar {
-    width: 20%;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .div-navbar > svg {
-    fill: var(--amarillo-principal);
-    height: 50%;
-  }
-  
+mat-drawer-container {
+  height: 100vh;
+}
+mat-drawer {
+  width: 20rem;
+}
+#sidenav-head {
+  background-color: var(--azul-principal);
+  padding: 1rem;
+  text-align: center;
+}
+#sidenav-head > h1 {
+  margin: 0;
+  color: var(--amarillo-principal);
+}
+mat-toolbar {
+  background-color: var(--azul-principal);
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 5rem;
+}
+.logos {
+  display: flex;
+  width: 10rem;
+  justify-content: space-between;
+}
+.logos > img {
+  width: 4rem;
+}
+.logos > #yellow-line {
+  border-left: 0.2rem solid var(--amarillo-principal);
+  height: 4rem;
+}
+
+.mat-icon-menu {
+  transform: scale(1.5);
+}

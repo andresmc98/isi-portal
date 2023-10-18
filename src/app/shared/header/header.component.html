@@ -1,76 +1,41 @@
-<header>
-    <div class="logos">
-      <img
-        src="../../../assets/logo-unison.png"
-        alt="Logotipo de la Universidad de Sonora"
-      />
-      <div id="yellow-line"></div>
-      <img
-        src="../../../assets/logo-isi.png"
-        alt="Logotipo de la carrera de Ingeniería en Sistemas de Información"
-      />
+<mat-drawer-container>
+  <!-- Contenido del drawer (barra lateral) -->
+  <mat-drawer #drawer position="end">
+    <!-- Contenido de la barra lateral -->
+    <div id="sidenav-head">
+      <h1>UNISON</h1>
     </div>
-  
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <li>
-      <button>
-        <a mat-menu-item routerLink="/noticias" routerLinkActive="active">Noticias</a>
-      </button>
-    </li>
-    <li>
-      <button>
-        <a mat-menu-item routerLink="/alumnos" routerLinkActive="active">Alumnos</a>
-      </button>
-    </li>
-    <li>
-      <button>
-        <a mat-menu-item routerLink="/maestros" routerLinkActive="active">Maestros</a>
-      </button>
-    </li>
-    <li>
-      <button>
-        <a mat-menu-item routerLink="/plan-estudios" routerLinkActive="active">Plan de estudios</a>
-      </button>
-    </li>
-    <li>
-      <button>
-        <a mat-menu-item routerLink="/galeria" routerLinkActive="active">Galería</a>
-      </button>
-    </li>
-    </mat-menu>
-    <!-- <div class="div-navbar">
-      <svg
-        (click)="onElementClick($event)"
-        id="navbar-button"
-        #navbarButton
-        xmlns="http://www.w3.org/2000/svg"
-        x="0px"
-        y="0px"
-        viewBox="0 0 48 48"
+    <mat-nav-list>
+      <mat-list-item routerLink=""><mat-icon>home</mat-icon>Home</mat-list-item>
+      <mat-list-item routerLink="noticias"
+        ><mat-icon>newspaper</mat-icon>Noticias</mat-list-item
       >
-        <path d="M6 22H42V26H6zM6 10H42V14H6zM6 34H42V38H6z"></path>
-      </svg>
-      <app-nav-bar id="navbar"></app-nav-bar>
-    </div> -->
-    <!-- <mat-drawer-container  autosize>
-      <mat-drawer #drawer  mode="side">
-        <mat-nav-list>
-          <a mat-list-item routerLink="/" routerLinkActive="active" (click)="drawer.close()">Noticias</a>
-          <a mat-list-item routerLink="/alumnos" (click)="drawer.close()">Alumnos</a>
-          <a mat-list-item routerLink="/maestros" (click)="drawer.close()">Maestros</a>
-          <a mat-list-item routerLink="/plan-estudios" (click)="drawer.close()">Plan de estudios</a>
-          <a mat-list-item routerLink="/galeria" (click)="drawer.close()" routerLinkActive="active" >Galería</a>
-        </mat-nav-list>
-      </mat-drawer>
-      <div>
-        <button type="button" mat-button (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
+      <mat-list-item><mat-icon>badge</mat-icon> Maestros</mat-list-item>
+      <mat-list-item><mat-icon>book 2</mat-icon> Materias</mat-list-item>
+      <mat-list-item><mat-icon>groups</mat-icon> Alumnos</mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <!-- Contenido principal -->
+  <mat-drawer-content>
+    <mat-toolbar>
+      <!-- Contenido de la barra de herramientas -->
+      <div class="logos">
+        <img
+          src="../../../assets/logo-unison.png"
+          alt="Logotipo de la Universidad de Sonora"
+        />
+        <div id="yellow-line"></div>
+        <img
+          src="../../../assets/logo-isi.png"
+          alt="Logotipo de la carrera de Ingeniería en Sistemas de Información"
+        />
       </div>
-    </mat-drawer-container> -->
-  
-  </header>
-  
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon class="mat-icon-menu">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    <!-- Contenido principal de la página -->
+  </mat-drawer-content>
+</mat-drawer-container>
