@@ -9,8 +9,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { MapaCurricularInteractivoComponent } from './mapa-curricular-interactivo/mapa-curricular-interactivo.component';
 import { ClubesComponent } from './clubes/clubes.component';
-
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,13 +18,9 @@ import { ClubesComponent } from './clubes/clubes.component';
     SliderComponent,
     NoticiasComponent,
     MapaCurricularInteractivoComponent,
-    ClubesComponent
+    ClubesComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    CarouselModule.forRoot(),
-  ],
-  exports: [HomeComponent]
+  imports: [CommonModule, RouterModule, CarouselModule.forRoot(), SharedModule],
+  exports: [HomeComponent],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

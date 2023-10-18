@@ -1,6 +1,10 @@
-.home {
-    margin: 5%;
-    overflow: scroll; /* Solución temportal, meramente visual */
-  }
- 
-  
+.body {
+  margin: 0 1rem;
+}
+#sections {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+}

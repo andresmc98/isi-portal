@@ -1,14 +1,11 @@
-<!-- <div class="home">
-    <section class="carousel-wrapper">
-      <div class="carousel-card" *ngFor="let item of articles">
-        <img src="{{ item.img }}" alt="" />
-        <div class="carousel-text">
-          <h2>{{ item.title }}</h2>
-        </div>
-      </div>
-    </section>
-  </div> -->
+<div class="body">
+  <app-slider></app-slider>
 
-  <div>
-    <app-slider></app-slider>
+  <app-title></app-title>
+  <div id="sections">
+    <app-icon-menu [iconName]="'profesor'"></app-icon-menu>
+    <app-icon-menu [iconName]="'alumno'"></app-icon-menu>
+    <app-icon-menu [iconName]="'historia'"></app-icon-menu>
+    <app-icon-menu [iconName]="'preguntas'"></app-icon-menu>
   </div>
+</div>
