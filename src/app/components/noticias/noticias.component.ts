@@ -6,7 +6,7 @@ import { Contenido, Doc, Noticias } from 'src/app/interfaces/Noticias';
 @Component({
   selector: 'app-noticias',
   templateUrl: './noticias.component.html',
-  styleUrls: ['./noticias.component.css']
+  styleUrls: ['./noticias.component.scss']
 })
 export class NoticiasComponent {
  
