@@ -6,7 +6,7 @@ import { Clubes } from 'src/app/interfaces/Clubes';
 @Component({
   selector: 'app-club-menu',
   templateUrl: './club-menu.component.html',
-  styleUrls: ['./club-menu.component.css'],
+  styleUrls: ['./club-menu.component.scss'],
 })
 export class ClubMenuComponent {
   @Input() clubName: string = '';
