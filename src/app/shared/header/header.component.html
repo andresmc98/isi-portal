@@ -1,25 +1,53 @@
 <mat-drawer-container>
   <!-- Contenido del drawer (barra lateral) -->
+  <!-- Banner unison -->
   <mat-drawer #drawer position="end">
-    <!-- Contenido de la barra lateral -->
     <div id="sidenav-head">
       <h1>UNISON</h1>
     </div>
+
+    <!-- Navbar -->
     <mat-nav-list>
-      <mat-list-item routerLink=""><mat-icon>home</mat-icon>Home</mat-list-item>
+      <a mat-list-item routerLink="/">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      <a mat-list-item routerLink="/noticias">
+        <mat-icon>article</mat-icon>
+        <span>Noticias</span>
+      </a>
+      <a mat-list-item routerLink="/maestros">
+        <mat-icon>school</mat-icon>
+        <span>Maestros</span>
+      </a>
+      <a mat-list-item routerLink="/materias">
+        <mat-icon>book</mat-icon>
+        <span>Materias</span>
+      </a>
+      <a mat-list-item routerLink="/alumnos">
+        <mat-icon>people</mat-icon>
+        <span>Alumnos</span>
+      </a>
+    </mat-nav-list>
+
+    <!-- <mat-nav-list>
+      <mat-list-item routerLink=""
+        ><mat-icon fontIcon="home"></mat-icon>
+        <p>Home</p>
+      </mat-list-item>
       <mat-list-item routerLink="noticias"
         ><mat-icon>newspaper</mat-icon>Noticias</mat-list-item
       >
       <mat-list-item><mat-icon>badge</mat-icon> Maestros</mat-list-item>
       <mat-list-item><mat-icon>book 2</mat-icon> Materias</mat-list-item>
       <mat-list-item><mat-icon>groups</mat-icon> Alumnos</mat-list-item>
-    </mat-nav-list>
+    </mat-nav-list> -->
   </mat-drawer>
 
   <!-- Contenido principal -->
   <mat-drawer-content>
     <mat-toolbar>
-      <!-- Contenido de la barra de herramientas -->
+      <!-- Banner -->
       <div class="logos">
         <img
           src="../../../assets/logo-unison.png"
@@ -32,10 +60,13 @@
         />
       </div>
       <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon class="mat-icon-menu">menu</mat-icon>
+        <mat-icon class="mat-icon-menu mamawebo" fontIcon="menu"></mat-icon>
       </button>
     </mat-toolbar>
-    <router-outlet></router-outlet>
-    <!-- Contenido principal de la página -->
+
+    <!-- Carga del contenido, dinamico -->
+    <router-outlet>
+      <!-- Contenido principal de la página -->
+    </router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
