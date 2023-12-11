@@ -1,0 +1,53 @@
+#seccionCuadroAzul {
+    position: relative;
+    height: 200px; /* Puedes ajustar la altura según tus necesidades */
+  
+    .cuadro-azul {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 180px;
+      height: 100%;
+      background-color: #0000ff;
+      border-radius: 10px;
+    }
+  
+    .cuadro-blanco {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid #0000ff;
+  
+      .redes-sociales {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+  
+        .red-social {
+          display: flex;
+          align-items: center;
+  
+          i {
+            font-size: 2em;
+            margin-right: 10px;
+          }
+  
+          p {
+            font-size: 1.2em;
+            margin: 0;
+          }
+        }
+      }
+  
+      p {
+        font-size: 1.2em;
+        margin: 0;
+      }
+    }
+  }
+  

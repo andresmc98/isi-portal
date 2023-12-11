@@ -1,0 +1,46 @@
+#servicios {
+    text-align: center;
+
+    .contenido {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 50px 20px;
+        color: #0000ff;
+
+        .servicio-card {
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+
+            img {
+                width: 100%;
+                max-height: 200px;
+                /* Ajusta la altura máxima según sea necesario */
+                object-fit: cover;
+                /* Ajusta cómo se ajusta la imagen dentro del contenedor */
+                border-radius: 10px;
+                display: block;
+            }
+
+            .nombre-servicio {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #ffffff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+                p {
+                    font-size: 1.5em;
+                    color: #0000ff; /* Color azul para el nombre del servicio */
+                    margin: 0;
+                  }
+            }
+        }
+    }
+}

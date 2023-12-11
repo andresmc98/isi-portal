@@ -1,0 +1,48 @@
+#lideres {
+    text-align: center;
+  
+    .contenido {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px 20px;
+
+      h2 {
+        font-size: 1.5em;
+        color: #0000ff;
+        margin-bottom: 20px;
+      }
+  
+      .lider-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+  
+        .informacion {
+          text-align: left; /* Alineación del texto a la izquierda */
+          
+          h3 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+          }
+  
+          .puesto {
+            font-size: 1em;
+            color: #888888; 
+          }
+        }
+  
+        img {
+          width: 150px;
+          height: 150px;
+          align-items: start;
+          border-radius: 50%;
+          margin-right: 10px; /* Espacio entre la imagen y la información */
+        }
+      }
+    }
+  }
+  
