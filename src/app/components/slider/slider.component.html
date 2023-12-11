@@ -1,10 +1,10 @@
 <carousel>
   <slide class="carousel-slide" *ngFor="let item of articles">
-    <div class="slide-content">
+    <a class="slide-content" (click)="navigateToDetail(item.id)">
       <img src="{{ item.img }}" alt="" />
       <div class="slide-caption">
         <h2>{{ item.title }}</h2>
       </div>
-    </div>
+    </a>
   </slide>
 </carousel>

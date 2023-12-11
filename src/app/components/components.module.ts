@@ -10,6 +10,7 @@ import { NoticiasComponent } from './noticias/noticias.component';
 import { MapaCurricularInteractivoComponent } from './mapa-curricular-interactivo/mapa-curricular-interactivo.component';
 import { ClubesComponent } from './clubes/clubes.component';
 import { SharedModule } from '../shared/shared.module';
+import { NoticiaComponent } from './noticia/noticia.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
     NoticiasComponent,
     MapaCurricularInteractivoComponent,
     ClubesComponent,
+    NoticiaComponent,
   ],
   imports: [CommonModule, RouterModule, CarouselModule.forRoot(), SharedModule],
   exports: [HomeComponent],
