@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { NoticiasComponent } from './components/noticias/noticias.component';
+import { NoticiaComponent } from './components/noticia/noticia.component';
 
 const appRoutes: Routes = [
   {
@@ -11,21 +12,22 @@ const appRoutes: Routes = [
   },
   {
     path: 'galeria',
-    component: GaleriaComponent
+    component: GaleriaComponent,
   },
   {
     path: 'noticias',
-    component: NoticiasComponent
+    component: NoticiasComponent,
   },
+  { path: 'noticias/:id', component: NoticiaComponent },
   {
     path: '**',
     redirectTo: '',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes,{useHash: false})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes, { useHash: false })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

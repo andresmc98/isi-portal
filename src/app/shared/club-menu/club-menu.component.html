@@ -1,4 +1,4 @@
-<!-- <div class="club-container">
+<div class="club-container">
   <img [src]="clubUrl" alt="" />
   <div class="club-text">
     <h1>{{ clubName }}</h1>
@@ -8,15 +8,15 @@
       sit, mollitia ut harum dolorem maxime nemo facilis aperiam? Esse!
     </p>
   </div>
-</div> -->
+</div>
 
 <!-- Dinamico -->
-<div class="club-container" *ngFor="let item of clubes">
-  <img src="http://localhost:3000{{item.logo.sizes.thumbnail.url}}" alt="" />
+<!-- <div class="club-container" *ngFor="let item of clubes">
+  <img src="http://localhost:3000{{ item.logo.sizes.thumbnail.url }}" alt="" />
   <div class="club-text">
     <h1>{{ item.nombre }}</h1>
     <p>
       {{ item.descripcion[0].children[0].text }}
     </p>
   </div>
-</div>
+</div> -->

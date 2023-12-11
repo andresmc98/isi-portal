@@ -10,8 +10,8 @@ export class IconMenuComponent {
   iconUrl: string = '';
 
   iconMap: { [key: string]: string } = {
-    profesor: 'assets/camisa.png',
-    alumno: 'assets/gorro-de-graduacion.png',
+    profesores: 'assets/camisa.png',
+    alumnos: 'assets/gorro-de-graduacion.png',
     historia: 'assets/cronologia.png',
     preguntas: 'assets/salvavidas.png',
   };
