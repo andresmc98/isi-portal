@@ -14,9 +14,7 @@ export class ClubMenuComponent {
 
   clubes: Doc[] = [];
 
-  constructor(
-    private apiservice : ApiService
-  ) {}
+  constructor(private apiservice: ApiService) {}
 
   clubMap: { [key: string]: string } = {
     CSTI: 'assets/csti.png',
@@ -25,8 +23,7 @@ export class ClubMenuComponent {
   ngOnInit() {
     this.clubName = this.clubName;
     this.clubUrl = this.clubMap[this.clubName];
-    this.getClubes();
-
+    // this.getClubes();
   }
 
   getClubes() {
