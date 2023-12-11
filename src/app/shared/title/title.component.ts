@@ -10,6 +10,9 @@ import { Component, Input } from '@angular/core';
   `,
   styles: [
     `
+      h1 {
+        margin-top: 2rem;
+      }
       .divider {
         height: 0.5rem;
         background-color: var(--amarillo-principal);
