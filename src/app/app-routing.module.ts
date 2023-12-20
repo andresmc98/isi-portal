@@ -1,18 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { GaleriaComponent } from './components/galeria/galeria.component';
-import { NoticiasComponent } from './components/noticias/noticias.component';
-import { NoticiaComponent } from './components/noticia/noticia.component';
+
+// Pages components
+import { HomeComponent } from './pages/home/home.component';
+import { NoticiasComponent } from './pages/noticias/noticias.component';
+import { NoticiaComponent } from './pages/noticia/noticia.component';
 
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
-  },
-  {
-    path: 'galeria',
-    component: GaleriaComponent,
   },
   {
     path: 'noticias',
