@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     RouterModule,
     SharedModule,
     MatToolbarModule,
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
