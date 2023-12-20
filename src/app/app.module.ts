@@ -10,11 +10,10 @@ import { Router, RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './components/components.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     AppMaterialModule,
     BrowserModule,
@@ -25,8 +24,9 @@ import { ComponentsModule } from './components/components.module';
     HttpClientModule,
     RouterModule,
     SharedModule,
+    MatToolbarModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
