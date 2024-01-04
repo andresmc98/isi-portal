@@ -1,5 +1,5 @@
 <!-- Estatico -->
-<!-- <div class="club-container">
+<div class="club-container">
   <img [src]="clubUrl" alt="" />
   <div class="club-text">
     <h1>{{ clubName }}</h1>
@@ -9,7 +9,7 @@
       sit, mollitia ut harum dolorem maxime nemo facilis aperiam? Esse!
     </p>
   </div>
-</div> -->
+</div>
 
 <!-- Dinamico -->
 <!-- He envuelto el contenido del club en un enlace <a> que utiliza el routerLink
@@ -24,21 +24,4 @@
   </a>
 </div> -->
 
-<section id="presentacion">
-  <div class="contenido" *ngIf="club">
-    <a>
-      <div class="club-header">
-        <div class="imagen">
-          <img [src]="clubUrl" alt="Logo del Club" />
-        </div>
-        <div class="texto">
-          <ng-container *ngIf="club.descripcion && club.descripcion[0] && club.descripcion[0].children && club.descripcion[0].children[0]">
-            <h1>{{ club.nombre }}</h1>
-            <p>{{ club.descripcion[0].children[0].text }}</p>
-            <!-- Agrega aquí cualquier otra información específica del club -->
-          </ng-container>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
+

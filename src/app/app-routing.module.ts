@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { ClubMenuComponent } from './components/club-menu/club-menu.component';
+import { ClubComponent } from './pages/club/club.component';
 
 const appRoutes: Routes = [
   {
@@ -18,7 +19,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'clubes/:nombre',
-    component: ClubMenuComponent
+    component: ClubComponent,
   },
   { path: 'noticias/:id', component: NoticiaComponent },
   {

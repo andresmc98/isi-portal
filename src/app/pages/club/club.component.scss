@@ -1,0 +1,39 @@
+#presentacion {
+    .contenido {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .club-header {
+            display: flex;
+            align-items: center;
+
+            .imagen {
+                img {
+                    max-width: 50%;
+                    height: auto;
+                }
+            }
+
+            .texto {
+                flex-grow: 1;
+                text-align: start;
+                margin-left: 20px;
+
+                h1 {
+                    font-size: 1.5rem;
+                    color: #800080;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                    color: #004990;
+                }
+            }
+        }
+    }
+}

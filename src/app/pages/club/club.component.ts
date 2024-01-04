@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Doc } from 'src/app/interfaces/Clubes';
@@ -9,28 +9,40 @@ import { Doc } from 'src/app/interfaces/Clubes';
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent implements OnInit {
+  @Input() clubName: string = '';
+  clubUrl: string = '';
   club: Doc | null = null;
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    const nombreClub = this.route.snapshot.params['nombre'];
-    if (nombreClub){
-      this.getClubInfo(nombreClub)
-    }
+  clubMap: { [key: string]: string } = {
+    CSTI: 'assets/csti.png',
+    CSI: 'assets/csi.png',
+  };
 
+  ngOnInit() {
+    this.route.params.subscribe((params) => {
+      this.clubName = params['nombre'];
+      this.clubUrl = this.clubMap[this.clubName];
+      this.getClubInfo();
+    });
   }
 
-  getClubInfo(nombreClub: string): void{
-    this.apiService.getClubByName(nombreClub).subscribe({
-      next: (clubResponse: Doc | null) => {
-        this.club = clubResponse;
+  getClubInfo() {
+    this.apiService.getClubByName(this.clubName).subscribe({
+      next: (data: Doc | null) => {
+        this.club = data;
+        //verificar si club y descripción están definidos antes de acceder a ellos
+        if (this.club && this.club.descripcion && this.club.descripcion[0].children) {
+
+        }
       },
       error: (err) => {
-        console.error('Error de clubes', err)
-      }
-    })
+        console.error('Error al obtener información del club', err);
+      },
+    });
   }
-
-  
 }
+
+
+
