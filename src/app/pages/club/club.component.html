@@ -1,0 +1,10 @@
+<div *ngIf="club">
+  <div class="club-header">
+    <img [src]="club?.logo?.sizes?.thumbnail?.url || 'ruta_predeterminada_si_nulo'" alt="{{ club?.nombre || 'Nombre Predeterminado' }} logo" />
+    <h1>{{ club?.nombre || 'Nombre Predeterminado' }}</h1>
+  </div>
+
+  <div class="club-description">
+    <p>{{ club?.descripcion?.[0]?.children?.[0]?.text || 'Descripción Predeterminada' }}</p>
+  </div>
+</div>
