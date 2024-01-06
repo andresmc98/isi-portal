@@ -1,0 +1,65 @@
+<section id="presentacion">
+  <div class="contenido" *ngIf="club">
+    <a>
+      <div class="club-header">
+        <div class="imagen">
+          <img [src]="clubUrl" alt="Logo del Club" />
+        </div>
+        <div class="texto">
+          <h1>{{ club.nombre }}</h1>
+          <p>{{ club.descripcion[0].children[0].text }}</p>
+          <!-- Add any other specific club information here -->
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="quienesSomos">
+  <h2>¿Quiénes Somos?</h2>
+  <p>{{ club?.quienesSomosText }}</p>
+</section>
+
+<section id="lideres">
+  <h2 class="lider-titulo">Líderes</h2>
+  <div class="lider-cards">
+    <div *ngFor="let lider of club?.lideres" class="lider-card">
+      <div class="lider-info">
+        <div class="lider-foto">
+          <img [src]="lider.fotoUrl" alt="{{ lider.nombre }}" />
+        </div>
+        <div class="lider-texto">
+          <h3 class="lider-nombre">{{ lider.nombre }}</h3>
+          <p class="lider-puesto">{{ lider.rol }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="titulo">
+  <h2>Servicios</h2>
+</section>
+<section id="servicios">
+  <div class="servicios-container">
+    <div *ngFor="let servicio of club?.servicios" class="servicio-card">
+      <div class="servicio-info">
+        <h3 class="servicio-nombre">{{ servicio?.nombre }}</h3>
+        <p class="servicio-descripcion">{{ servicio?.sdescripcion }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="redsocial">
+  <h2>Encuentranos</h2>
+</section>
+<section id="redesSociales">
+  <div class="red-social" *ngFor="let redSocial of club?.redesSociales">
+    <a [href]="redSocial.url" target="_blank">
+      <img [src]="redSocial.foto" alt="{{ redSocial.nombre }}" />
+      <i >{{redSocial.nombre}}</i>
+    </a>
+  </div>
+  <p>{{club?.ubicacion}}</p>
+</section>

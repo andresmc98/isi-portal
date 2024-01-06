@@ -18,6 +18,28 @@ export interface Doc {
     descripcion: Descripcion[];
     createdAt:   Date;
     updatedAt:   Date;
+    quienesSomosText?: string;
+    lideres?: Lider[];
+    servicios?: Servicio[];
+    redesSociales?: Redsocial[];
+    ubicacion?: string;
+}
+
+export interface Redsocial {
+    nombre: string;
+    url: string;
+    foto: string;
+}
+
+export interface Servicio{
+    nombre: string;
+    sdescripcion: string;
+}
+
+export interface Lider {
+    nombre: string;
+    rol: string;
+    fotoUrl: string;
 }
 
 export interface Descripcion {

@@ -8,6 +8,7 @@ import { SliderComponent } from './slider/slider.component';
 
 import { SharedModule } from '../shared/shared.module';
 
+
 @NgModule({
   declarations: [SliderComponent],
   imports: [CommonModule, RouterModule, CarouselModule.forRoot(), SharedModule],
