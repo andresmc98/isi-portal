@@ -32,6 +32,7 @@ export class ClubComponent implements OnInit {
     this.apiService.getClubByName(this.clubName).subscribe({
       next: (data: Doc | null) => {
         this.club = data;
+        console.log("Redes sociales", this.club?.redesSociales);
         //verificar si club y descripción están definidos antes de acceder a ellos
         if (this.club && this.club.descripcion && this.club.descripcion[0].children) {
 

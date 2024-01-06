@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of} from 'rxjs';
+import { Observable, catchError, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Noticias } from '../interfaces/Noticias';
 import { Doc, Clubes } from '../interfaces/Clubes';
@@ -49,6 +49,27 @@ export class ApiService {
         descripcion: [
           { children: [{ text: 'Innovación, Colaboración, Progreso' }] }
         ],
+        lideres: [
+          {
+            nombre: 'Federico Cirett',
+            rol: 'Encargado',
+            fotoUrl: 'assets/foto.png'
+          },
+          {
+            nombre: "Saúl Fimbres",
+            rol: 'jefe',
+            fotoUrl: 'assets/foto.png'
+          }
+        ],
+        servicios: [
+          {nombre: 'servicio 1', sdescripcion: 'descripcion del servicio CSI'},
+          {nombre: 'servicio 2', sdescripcion: 'descripcion del servicio CSI'},
+        ],
+        redesSociales: [
+          {nombre: 'Facebook', url: 'https://www.facebook.com', foto:'assets/facebook.png'},
+          {nombre: 'Instagram', url: 'https://www.instagram.com', foto:'assets/instagram.png'},
+        ],
+        ubicacion: 'Edificio 5J, segundo piso',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -74,6 +95,29 @@ export class ApiService {
         descripcion: [
           { children: [{ text: 'Descripción del club CSTI' }] }
         ],
+        servicios: [
+          {nombre: 'servicio 1', sdescripcion: 'descripcion del servicio CSTI'},
+          {nombre: 'servicio 2', sdescripcion: 'descripcion del servicio CSTI'},
+          {nombre: 'servicio 3', sdescripcion: 'descripcion del servicio CSTI'},
+        ],
+        lideres: [
+          {
+            nombre: 'Ivan',
+            rol: 'Encargado',
+            fotoUrl: 'assets/foto.png'
+          },
+          {
+            nombre: 'Kevin Sandoval',
+            rol: 'Jefe',
+            fotoUrl: 'assets/foto.png'
+          }
+        ],
+        redesSociales: [
+          {nombre: 'Facebook', url: 'https://www.facebook.com', foto:'assets/facebook.png'},
+          {nombre: 'Instagram', url: 'https://www.instagram.com', foto:'assets/instagram.png'},
+
+        ],
+        ubicacion: 'Edificio 5G, segundo piso',
         createdAt: new Date(),
         updatedAt: new Date(),
       },
@@ -103,6 +147,10 @@ export class ApiService {
         // Utilizamos map para transformar la respuesta del observable
         map((response: Clubes) => {
           const club = response.docs.find((c) => c.nombre === nombre);
+          if (club) {
+            club.quienesSomosText = `Texto correspondiente a ${club.nombre}...`;
+
+          }
           return club || null;
         }),
         catchError(this.handleError<Doc>('getClubByName', undefined))
