@@ -32,7 +32,8 @@
 							"./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
 							"./node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"@angular/material/prebuilt-themes/deeppurple-amber.css",
-							"src/styles.scss"
+							"src/styles.scss",
+							"node_modules/font-awesome/css/font-awesome.min.css"
 						],
 						"scripts": []
 					},

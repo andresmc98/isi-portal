@@ -1,3 +1,4 @@
+<!-- Estatico -->
 <div class="club-container">
   <img [src]="clubUrl" alt="" />
   <div class="club-text">
@@ -11,12 +12,16 @@
 </div>
 
 <!-- Dinamico -->
-<!-- <div class="club-container" *ngFor="let item of clubes">
-  <img src="http://localhost:3000{{ item.logo.sizes.thumbnail.url }}" alt="" />
-  <div class="club-text">
-    <h1>{{ item.nombre }}</h1>
-    <p>
-      {{ item.descripcion[0].children[0].text }}
-    </p>
-  </div>
+<!-- He envuelto el contenido del club en un enlace <a> que utiliza el routerLink
+  para dirigir a la página del csti o csi como párametro en la URL-->
+<!--<div class="club-container" *ngFor="let item of clubes">
+  <a [routerLink]="['/clubes', item.nombre]">
+    <img [src]="clubMap[item.nombre]" alt="" />
+    <div class="club-text">
+      <h1>{{item.nombre}}</h1>
+      <p>{{ item.descripcion[0].children[0].text }}</p>
+    </div>
+  </a>
 </div> -->
+
+

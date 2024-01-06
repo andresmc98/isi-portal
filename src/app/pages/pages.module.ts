@@ -10,10 +10,11 @@ import { NoticiaComponent } from '../pages/noticia/noticia.component';
 // Components imports
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
+import { ClubComponent } from './club/club.component';
 
 @NgModule({
-  declarations: [HomeComponent, NoticiasComponent, NoticiaComponent],
+  declarations: [HomeComponent, NoticiasComponent, NoticiaComponent, ClubComponent],
   imports: [CommonModule, SharedModule, ComponentsModule, RouterModule],
-  exports: [HomeComponent, NoticiasComponent, NoticiaComponent],
+  exports: [HomeComponent, NoticiasComponent, NoticiaComponent, ClubComponent],
 })
 export class PagesModule {}
