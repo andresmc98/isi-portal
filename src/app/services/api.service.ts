@@ -1,15 +1,17 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Noticias } from '../interfaces/Noticias';
 import { Clubes } from '../interfaces/Clubes';
+import { environment } from 'src/environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private API_URL = 'http://localhost:3000/api/'
+  private API_URL = environment.localUrl //local
+  //private  API_URL = environment.baseUrl; //server
   private headers;
 
   constructor(private http: HttpClient) {
