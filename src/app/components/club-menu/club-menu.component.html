@@ -17,7 +17,8 @@
 <!-- He envuelto el contenido del club en un enlace <a> que utiliza el routerLink
   para dirigir a la página del csti o csi como párametro en la URL-->
 <div class="club-container" *ngFor="let item of clubes">
-    <img [src]="'http://localhost:3000'+[item?.logo?.sizes?.thumbnail?.url]" alt="" />
+    <!-- <img [src]="'http://localhost:3004'+[item?.logo?.sizes?.thumbnail?.url]" alt="" /> -->
+    <img [src]="apiUrl+[item.logo.sizes.thumbnail.url]" alt="" />
     <div class="club-text">
       <h1>{{item.nombre}}</h1>
       <h1>{{item.descripcion}}</h1>
