@@ -11,8 +11,8 @@ import { environment } from 'src/environment/environment';
 export class ClubMenuComponent implements OnInit{
 
   clubes : Doc[] = [];
-  apiUrl = environment.localMediaUrl; //local
-  //apiUrl = environment.baseMediaUrl; //server
+  //apiUrl = environment.localMediaUrl; //local
+  apiUrl = environment.baseMediaUrl; //server
 
   constructor(private apiservice: ApiService) { }
 
