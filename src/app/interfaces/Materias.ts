@@ -21,4 +21,6 @@ export interface Doc {
     link_temario: string;
     createdAt:    Date;
     updatedAt:    Date;
+    requisitos:   string;
+    seriada:      string;
 }
