@@ -10,8 +10,8 @@ import { environment } from 'src/environment/environment';
 })
 export class ApiService {
 
-  private API_URL = environment.localUrl //local
-  //private  API_URL = environment.baseUrl; //server
+  //private API_URL = environment.localUrl //local
+  private  API_URL = environment.baseUrl; //server
   private headers;
 
   constructor(private http: HttpClient) {
