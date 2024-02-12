@@ -45,5 +45,5 @@ jobs:
         run: |
           rsync -rvz --delete --exclude=".git" --exclude="node_modules" ./dist unison-isi:/var/www/isi-site
           
-      - name: SSH to Production and install dependencies
-        run: ssh unison-isi "cd /var/www/isi-site && rm -rf node_modules && npm install"
+      - name: SSH to Production
+        run: ssh unison-isi "cd /var/www/isi-site && rm -rf node_modules"
