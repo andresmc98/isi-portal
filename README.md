@@ -60,4 +60,4 @@
   <img src="https://media.tenor.com/Z4Ks69TQz0wAAAAi/hacker-pepe.gif"/>
 </p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
