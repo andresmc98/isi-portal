@@ -21,28 +21,10 @@ export class ClubComponent implements OnInit {
   };
 
   ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.clubName = params['nombre'];
-      this.clubUrl = this.clubMap[this.clubName];
-      this.getClubInfo();
-    });
+
   }
 
-  getClubInfo() {
-    this.apiService.getClubByName(this.clubName).subscribe({
-      next: (data: Doc | null) => {
-        this.club = data;
-        console.log("Redes sociales", this.club?.redesSociales);
-        //verificar si club y descripción están definidos antes de acceder a ellos
-        if (this.club && this.club.descripcion && this.club.descripcion[0].children) {
 
-        }
-      },
-      error: (err) => {
-        console.error('Error al obtener información del club', err);
-      },
-    });
-  }
 }
 
 

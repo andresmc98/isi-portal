@@ -1,40 +1,33 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { Clubes } from 'src/app/interfaces/Clubes';
 import { Doc } from 'src/app/interfaces/Clubes';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-club-menu',
   templateUrl: './club-menu.component.html',
   styleUrls: ['./club-menu.component.scss'],
 })
-export class ClubMenuComponent {
-  @Input() clubName: string = '';
-  clubUrl: string = '';
+export class ClubMenuComponent implements OnInit{
 
-  clubes: Doc[] = [];
-
+  clubes : Doc[] = [];
+  //apiUrl = environment.localMediaUrl; //local
+  apiUrl = environment.baseMediaUrl; //server
 
   constructor(private apiservice: ApiService) { }
 
-  clubMap: { [key: string]: string } = {
-    CSTI: 'assets/csti.png',
-    CSI: 'assets/csi.png',
-  };
+  ngOnInit(): void{
+    this.getClubes();
 
-  ngOnInit() {
-    this.clubName = this.clubName;
-    this.clubUrl = this.clubMap[this.clubName];
   }
 
-  getClubes() {
-    this.apiservice.getClubes().subscribe({
-      next: (data: Clubes) => {
-        this.clubes = data.docs;
-      },
-      error: (err) => {
-        this.clubes = [];
-      },
-    });
+  getClubes(){
+    console.log('getClubesPayload');
+    this.apiservice.getClubes().subscribe(res=>{
+      console.log('getClubesResponse', res);
+      this.clubes = res.docs;
+    },error =>{
+      console.log('getClubesError', error);
+    })
   }
 }
