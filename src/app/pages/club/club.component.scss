@@ -1,4 +1,7 @@
 #presentacion {
+
+    background: linear-gradient(to bottom, rgba(0, 73, 144, 0), #004990);
+
     .contenido {
         max-width: 1200px;
         margin: 0 auto;
@@ -14,8 +17,9 @@
 
             .imagen {
                 img {
-                    max-width: 100%;
+                    max-width: 100%; // Esto hace que la imagen se ajuste al ancho del contenedor
                     height: auto;
+                    max-width: 175px; // Ajusta este valor al tamaño deseado para dispositivos móviles
                 }
             }
 
@@ -25,98 +29,93 @@
                 margin-left: 20px;
 
                 h1 {
-                    font-size: 1.5rem;
-                    color: #800080;
-                }
-
-                p {
-                    font-size: 1.1rem;
-                    color: #004990;
+                    font-size: 2rem; // Aumenta el tamaño de la fuente
+                    color: black;
+                    font-family: 'Tommy', sans-serif; // Cambia el tipo de fuente a 'Tommy'
+                    text-shadow: 2px 2px 4px rgba(220, 203, 20, 0.63); // Agrega sombra al texto
                 }
             }
         }
     }
 }
 
+
 #quienesSomos {
-    background: linear-gradient(180deg, #FFFF00 0%, #FFA500 100%);
     text-align: center;
     padding: 20px;
     color: black;
     margin-bottom: 20px; // Ajusta según tu diseño y preferencias
 
     h2 {
-        font-size: 2rem;
-        color: white;
+        font-size: 1.8rem;
+        color: black;
         margin-bottom: 10px; // Ajusta según tu diseño y preferencias
     }
 
     p {
-        font-size: 1.2rem;
-        margin-top: 10px;
+        font-size: 1rem;
+        margin-top: auto;
     }
 }
 
 #lideres {
-    text-align: center; // Centrar el título
-    margin-bottom: 20px;
-
     .lider-titulo {
-        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 20px;
         color: #004990;
-        margin-bottom: 10px; // Espacio entre el título y las cards
     }
 
-    .lider-cards {
+    .lider-card {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        align-items: center;
+        width: calc(100% - 20px); // Ajusta el ancho de las tarjetas y el espacio entre ellas
+        margin-bottom: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); // Aplica sombra
+        transition: box-shadow 0.3s ease; // Agrega una transición de sombra
 
-        .lider-card {
-            width: 250px;
-            margin: 10px;
-            padding: 15px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        &:hover {
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); // Cambia la sombra al pasar el mouse
+            transform: translateY(-5px); // Añade un efecto de elevación
+        }
 
-            .lider-info {
-                display: flex;
-                align-items: center;
+        .lider-info {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
 
-                .lider-foto {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 50%;
-                    overflow: hidden;
-                    margin-right: 15px;
+        .imagen-lider {
+            width: 100px;
+            margin-right: 20px;
+        }
 
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                }
+        .imagen-lider img {
+            max-width: 100%;
+            border-radius: 50%;
+        }
 
-                .lider-texto {
-                    flex-grow: 1;
+        .lider-texto {
+            text-align: center;
+        }
 
-                    .lider-nombre {
-                        font-size: 1.2rem;
-                        font-weight: bold;
-                        color: #333;
-                        margin-bottom: 5px;
-                    }
+        .lider-nombre {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-                    .lider-puesto {
-                        font-size: 1rem;
-                        color: #666;
-                    }
-                }
-            }
+        .lider-tipo {
+            font-size: 1rem;
+            color: #004990;
         }
     }
 }
+
+
 
 #titulo {
     text-align: center;
@@ -179,30 +178,68 @@
 }
 
 
-#redesSociales {
+#redsocial {
     display: flex;
-    flex-direction: column;
-    margin-left: 20px; // Margen izquierdo para separar de la izquierda
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
 
+.redes-sociales {
+    flex-grow: 1;
+}
 
-    .red-social {
-        margin-bottom: 10px;
+.contacto-info {
+    flex-grow: 1;
+    padding-left: 20px;
+    /* Ajusta el espacio entre las redes sociales y la información de contacto */
+}
 
-        a {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+.social-media-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+}
 
-            img {
-                width: 50px;
-                height: auto;
-                border-radius: 50%;
-                margin-bottom: 5px;
-            }
+.contact-info {
+    font-size: 16px;
+    font-weight: bold;
+}
 
-            i {
-                font-size: 0.8em;
-            }
-        }
-    }
+.ubicacion {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#servicios {
+    font-family: Arial, sans-serif;
+}
+
+#servicios h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+#servicios .servicios-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#servicios .servicio-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: calc(50% - 10px);
+}
+
+#servicios .servicio-nombre {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+#servicios .servicio-descripcion {
+    font-size: 14px;
+    color: #666;
 }
