@@ -7,7 +7,7 @@
         </div>
         <div class="texto">
           <h1>{{ club.nombre }}</h1>
-          <p>{{ club.descripcion[0].children[0].text }}</p>
+          <!-- <p>{{ club.descripcion[0].children[0].text }}</p> -->
           <!-- Add any other specific club information here -->
         </div>
       </div>
@@ -17,7 +17,7 @@
 
 <section id="quienesSomos">
   <h2>¿Quiénes Somos?</h2>
-  <p>{{ club?.quienesSomosText }}</p>
+  <p>{{ club?.descripcion }}</p>
 </section>
 
 <section id="lideres">
@@ -26,11 +26,11 @@
     <div *ngFor="let lider of club?.lideres" class="lider-card">
       <div class="lider-info">
         <div class="lider-foto">
-          <img [src]="lider.fotoUrl" alt="{{ lider.nombre }}" />
+          <!-- <img [src]="lider.fotoUrl" alt="{{ lider.nombre }}" /> -->
         </div>
         <div class="lider-texto">
-          <h3 class="lider-nombre">{{ lider.nombre }}</h3>
-          <p class="lider-puesto">{{ lider.rol }}</p>
+          <h3 class="lider-nombre">{{ lider }}</h3>
+          <p class="lider-puesto">{{ lider }}</p>
         </div>
       </div>
     </div>
@@ -44,8 +44,8 @@
   <div class="servicios-container">
     <div *ngFor="let servicio of club?.servicios" class="servicio-card">
       <div class="servicio-info">
-        <h3 class="servicio-nombre">{{ servicio?.nombre }}</h3>
-        <p class="servicio-descripcion">{{ servicio?.sdescripcion }}</p>
+        <h3 class="servicio-nombre">{{ servicio?.nombre_servicio }}</h3>
+        <p class="servicio-descripcion">{{ servicio?.descripcion_servicio }}</p>
       </div>
     </div>
   </div>
@@ -55,11 +55,11 @@
   <h2>Encuentranos</h2>
 </section>
 <section id="redesSociales">
-  <div class="red-social" *ngFor="let redSocial of club?.redesSociales">
-    <a [href]="redSocial.url" target="_blank">
-      <img [src]="redSocial.foto" alt="{{ redSocial.nombre }}" />
-      <i >{{redSocial.nombre}}</i>
-    </a>
+  <div class="red-social" *ngFor="let redSocial of club?.redes_sociales">
+    <!-- <a [href]="redSocial.url" target="_blank">
+      <img [src]="redSocial.foto" alt="{{ redSocial.link_fb }}" /> -->
+      <i >{{redSocial.link_fb}}</i>
+    <!-- </a> -->
   </div>
   <p>{{club?.ubicacion}}</p>
 </section>

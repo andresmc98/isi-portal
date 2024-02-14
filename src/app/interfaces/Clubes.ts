@@ -12,48 +12,24 @@ export interface Clubes {
 }
 
 export interface Doc {
-    id:          string;
-    nombre:      string;
-    logo:        Logo;
-    descripcion: Descripcion[];
-    createdAt:   Date;
-    updatedAt:   Date;
-    quienesSomosText?: string;
-    lideres?: Lider[];
-    servicios?: Servicio[];
-    redesSociales?: Redsocial[];
-    ubicacion?: string;
-}
-
-export interface Redsocial {
-    nombre: string;
-    url: string;
-    foto: string;
-}
-
-export interface Servicio{
-    nombre: string;
-    sdescripcion: string;
-}
-
-export interface Lider {
-    nombre: string;
-    rol: string;
-    fotoUrl: string;
-}
-
-export interface Descripcion {
-    children: Child[];
-}
-
-export interface Child {
-    text: string;
+    id:                 string;
+    nombre:             string;
+    logo:               Logo;
+    descripcion:        string;
+    profesor_encargado: string;
+    lideres:            string;
+    ubicacion:          string;
+    redes_sociales:     RedesSociale[];
+    servicios:          Servicio[];
+    proyectos:          Proyecto[];
+    createdAt:          Date;
+    updatedAt:          Date;
 }
 
 export interface Logo {
     id:        string;
     filename:  string;
-    mimeType:  string;
+    mimeType:  MIMEType;
     filesize:  number;
     width:     number;
     height:    number;
@@ -61,6 +37,11 @@ export interface Logo {
     createdAt: Date;
     updatedAt: Date;
     url:       string;
+}
+
+export enum MIMEType {
+    ImageJPEG = "image/jpeg",
+    ImagePNG = "image/png",
 }
 
 export interface Sizes {
@@ -72,8 +53,31 @@ export interface Sizes {
 export interface Card {
     width:    number | null;
     height:   number | null;
-    mimeType: null | string;
+    mimeType: MIMEType | null;
     filesize: number | null;
     filename: null | string;
     url?:     string;
+}
+
+export interface Proyecto {
+    nombre_proyecto:      string;
+    descripcion_proyecto: string;
+    imagen_proyecto:      Logo;
+    id:                   string;
+}
+
+export interface RedesSociale {
+    link_fb:    string;
+    link_insta: string;
+    link_x:     string;
+    github:     string;
+    pagina_web: string;
+    id:         string;
+}
+
+export interface Servicio {
+    nombre_servicio:      string;
+    descripcion_servicio: string;
+    imagen_servicio:      Logo;
+    id:                   string;
 }
