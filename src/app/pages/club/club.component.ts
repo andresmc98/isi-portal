@@ -18,7 +18,7 @@ export class ClubComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.clubNombre = params.get('nombre') ?? '';
+      this.clubNombre = (params.get('nombre') ?? '').toUpperCase();
       this.getClubes();
     });
   }
