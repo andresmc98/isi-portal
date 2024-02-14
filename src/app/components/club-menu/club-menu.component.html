@@ -22,6 +22,8 @@
     <div class="club-text">
       <h1>{{item.nombre}}</h1>
       <p>{{item.descripcion}}</p>
+      <a [routerLink]="['/clubes/'+item.nombre]"  [id] = "item.nombre">Ver más</a>
+      <p>{{item.nombre}}</p>
       <!-- <p>{{ item.descripcion[0].children[0].text }}</p> -->
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { Doc } from 'src/app/interfaces/Clubes';
+import { Club } from 'src/app/interfaces/Clubes';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -10,7 +10,7 @@ import { environment } from 'src/environment/environment';
 })
 export class ClubMenuComponent implements OnInit{
 
-  clubes : Doc[] = [];
+  clubes : Club[] = [];
   //apiUrl = environment.localMediaUrl; //local
   apiUrl = environment.baseMediaUrl; //server
 

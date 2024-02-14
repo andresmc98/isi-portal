@@ -1,5 +1,5 @@
 export interface Materias {
-    docs:          Doc[];
+    docs:          Materia[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;
@@ -11,7 +11,7 @@ export interface Materias {
     nextPage:      null;
 }
 
-export interface Doc {
+export interface Materia {
     id:           string;
     nombre:       string;
     descripcion:  string;

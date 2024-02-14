@@ -1,5 +1,5 @@
 export interface Noticias {
-    docs:          Doc[];
+    docs:          Noticia[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;
@@ -11,7 +11,7 @@ export interface Noticias {
     nextPage:      null;
 }
 
-export interface Doc {
+export interface Noticia {
     id:               string;
     titulo:           string;
     image:            Image;

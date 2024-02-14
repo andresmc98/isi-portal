@@ -1,5 +1,5 @@
 export interface Clubes {
-    docs:          Doc[];
+    docs:          Club[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;
@@ -11,7 +11,7 @@ export interface Clubes {
     nextPage:      null;
 }
 
-export interface Doc {
+export interface Club {
     id:                 string;
     nombre:             string;
     logo:               Logo;

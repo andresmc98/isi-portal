@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { Doc } from 'src/app/interfaces/Clubes';
+import { Club } from 'src/app/interfaces/Clubes';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -10,28 +10,29 @@ import { environment } from 'src/environment/environment';
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent implements OnInit {
-  clubes: Doc[] = [];
+
   apiUrl = environment.baseMediaUrl; //server
-  clubNombre: string = '';
+
+  club: Club = {} as Club;
+  nombreClub: string = '';
 
   constructor(private route: ActivatedRoute, private apiservice: ApiService) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.clubNombre = params.get('nombre') ?? '';
-      this.getClubes();
+
+    this.route.params.subscribe(params => {
+      this.nombreClub = params['id'] ?? '';
     });
+    this.getClubById(this.nombreClub);
   }
 
-  getClubes() {
-    console.log('getClubesPayload');
-    this.apiservice.getClubes().subscribe(res => {
-      console.log('getClubesResponse', res);
-      // Filtrar la lista de clubes para mostrar solo el club con el ID correspondiente
-      this.clubes = res.docs.filter(club => club.nombre === this.clubNombre);
-      console.log('Filtered Clubs:', this.clubes);
+  getClubById(id: string) {
+    console.log('getClubByIdPayload');
+    this.apiservice.getClubById(id).subscribe(res => {
+      console.log('getClubByIdResponse', res);
+      this.club = res;
     }, error => {
-      console.log('getClubesError', error);
+      console.log('getClubByIdError', error);
     })
   }
 }

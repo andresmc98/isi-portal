@@ -18,8 +18,8 @@ const appRoutes: Routes = [
     component: NoticiasComponent,
   },
   {
-    path: 'clubes/:nombre',
-    component: ClubComponent,
+    path: 'clubes/:id',
+    component: ClubComponent
   },
   { path: 'noticias/:id', component: NoticiaComponent },
   {
