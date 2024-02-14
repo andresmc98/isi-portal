@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { Doc } from 'src/app/interfaces/Clubes';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-club',
@@ -9,23 +10,28 @@ import { Doc } from 'src/app/interfaces/Clubes';
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent implements OnInit {
-  @Input() clubName: string = '';
-  clubUrl: string = '';
-  club: Doc | null = null;
+  clubes: Doc[] = [];
+  apiUrl = environment.baseMediaUrl; //server
+  clubNombre: string = '';
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
-
-  clubMap: { [key: string]: string } = {
-    CSTI: 'assets/csti.png',
-    CSI: 'assets/csi.png',
-  };
+  constructor(private route: ActivatedRoute, private apiservice: ApiService) { }
 
   ngOnInit() {
-
+    this.route.paramMap.subscribe(params => {
+      this.clubNombre = (params.get('nombre') ?? '').toUpperCase();
+      this.getClubes();
+    });
   }
 
-
+  getClubes() {
+    console.log('getClubesPayload');
+    this.apiservice.getClubes().subscribe(res => {
+      console.log('getClubesResponse', res);
+      // Filtrar la lista de clubes para mostrar solo el club con el ID correspondiente
+      this.clubes = res.docs.filter(club => club.nombre === this.clubNombre);
+      console.log('Filtered Clubs:', this.clubes);
+    }, error => {
+      console.log('getClubesError', error);
+    })
+  }
 }
-
-
-
