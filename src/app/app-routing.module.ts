@@ -6,13 +6,19 @@ import { HomeComponent } from './pages/home/home.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { ClubComponent } from './pages/club/club.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { MaestrosComponent } from './pages/maestros/maestros.component';
 import { MaestroComponent } from './pages/maestro/maestro.component';
+
 
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path:'nosotros',
+    component: AboutUsComponent
   },
   {
     path: 'noticias',
