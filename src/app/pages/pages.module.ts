@@ -11,9 +11,10 @@ import { NoticiaComponent } from '../pages/noticia/noticia.component';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { ClubComponent } from './club/club.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
-  declarations: [HomeComponent, NoticiasComponent, NoticiaComponent, ClubComponent],
+  declarations: [HomeComponent, NoticiasComponent, NoticiaComponent, ClubComponent, AboutUsComponent],
   imports: [CommonModule, SharedModule, ComponentsModule, RouterModule],
   exports: [HomeComponent, NoticiasComponent, NoticiaComponent, ClubComponent],
 })

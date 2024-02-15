@@ -7,11 +7,16 @@ import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
 import { ClubMenuComponent } from './components/club-menu/club-menu.component';
 import { ClubComponent } from './pages/club/club.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
 
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path:'nosotros',
+    component: AboutUsComponent
   },
   {
     path: 'noticias',
