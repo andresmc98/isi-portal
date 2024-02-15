@@ -1,45 +1,44 @@
-<section id="presentacion">
-  <div class="contenido" *ngFor="let item of clubes">
+<section id="presentacion" *ngFor="let club of clubes">
+  <div class="contenido">
     <a>
       <div class="club-header">
         <div class="imagen">
-          <img [src]="apiUrl+[item.logo.sizes.tablet.url]" alt="" />
+          <img [src]="apiUrl + club.logo.sizes.tablet.url" alt="" />
         </div>
         <div class="texto">
-          <h1>{{item.nombre}}</h1>
+          <h1>{{club.nombre}}</h1>
         </div>
       </div>
     </a>
   </div>
 </section>
 
-<section id="quienesSomos">
+<section id="quienesSomos" *ngFor="let club of clubes">
   <h2>¿Quiénes Somos?</h2>
-  <p>{{clubes[0].descripcion}}</p>
+  <p>{{club.descripcion}}</p>
 </section>
 
-
-<section id="lideres">
+<section id="lideres" *ngFor="let club of clubes">
   <h2 class="lider-titulo">Líderes</h2>
   <div class="lider-cards">
-    <div class="lider-card">
+    <div class="lider-card" *ngFor="let lider of club.lideres.split(',')">
       <div class="lider-info">
         <div class="imagen-lider">
           <img src="assets/foto.png" alt="Foto del líder">
         </div>
         <div class="lider-texto">
-          <h3 class="lider-nombre">{{ clubes[0].profesor_encargado }}</h3>
+          <h3 class="lider-nombre">{{ club.profesor_encargado }}</h3>
           <p class="lider-tipo">Maestro Encargado</p>
         </div>
       </div>
     </div>
-    <div class="lider-card">
+    <div class="lider-card" *ngFor="let lider of club.lideres.split(',')">
       <div class="lider-info">
         <div class="imagen-lider">
           <img src="assets/foto.png" alt="Foto del líder">
         </div>
         <div class="lider-texto">
-          <h3 class="lider-nombre">{{ clubes[0].lideres }}</h3>
+          <h3 class="lider-nombre">{{ club.lideres }}</h3>
           <p class="lider-tipo">Líder Alumno</p>
         </div>
       </div>
@@ -50,23 +49,23 @@
 
 
 <!-- Sección de Servicios -->
-<section id="titulo">
-        <h2>Servicios</h2>
-    </section>
-    <section id="servicios">
-        <div class="servicios-container">
-            <!-- Aquí se generan dinámicamente los servicios desde Angular -->
-            <div *ngFor="let servicio of clubes[0].servicios" class="servicio-card">
-              <div class="servicio-info">
-                  <h3 class="servicio-nombre">{{ servicio?.nombre_servicio }}</h3>
-                  <p class="servicio-descripcion">{{ servicio?.descripcion_servicio }}</p>
-              </div>
-          </div>
+<section id="titulo" *ngFor="let club of clubes">
+  <h2>Servicios</h2>
+</section>
+<section id="servicios" *ngFor="let club of clubes">
+  <div class="servicios-container">
+    <!-- Aquí se generan dinámicamente los servicios desde Angular -->
+    <div *ngFor="let servicio of club.servicios" class="servicio-card">
+      <div class="servicio-info">
+        <h3 class="servicio-nombre">{{ servicio.nombre_servicio }}</h3>
+        <p class="servicio-descripcion">{{ servicio.descripcion_servicio }}</p>
       </div>
-  </section>
+    </div>
+  </div>
+</section>
 
 <!-- Sección de Redes Sociales -->
-<section id="redsocial">
+<section id="redsocial" *ngFor="let club of clubes">
   <div class="redes-sociales">
     <h2>Síguenos</h2>
     <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
@@ -80,6 +79,6 @@
     <h2 class="contact-info">Información de Contacto:</h2>
     <p class="contact-info">Email: info@example.com</p>
     <p class="contact-info">Teléfono: (123) 456-7890</p>
-    <p class="ubicacion">{{ clubes[0].ubicacion }}</p>
+    <p class="ubicacion">{{ club.ubicacion }}</p>
   </div>
 </section>
