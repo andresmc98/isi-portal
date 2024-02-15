@@ -23,6 +23,7 @@
       <h1>{{item.nombre}}</h1>
       <p>{{item.descripcion}}</p>
       <!-- <p>{{ item.descripcion[0].children[0].text }}</p> -->
+      <a [routerLink]="['/clubes/'+ item.nombre]">Ver mas</a>
     </div>
 </div>
 

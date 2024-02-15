@@ -1,0 +1,44 @@
+<section id="about-us">
+    <div class="about-us-container">
+        <div class="text">
+            <h1>¿Quienes Somos?</h1>
+        </div>
+    </div>
+</section>
+
+<section id="nosotros">
+    <div class="nosotros-container">
+        <div class="img">
+            <img [src]="apiUrl + mediaUs.sizes.tablet.url" alt="">
+        </div>
+        <div class="nosotros-descripcion">
+            <h2>¡Bienvenidos! </h2>
+            <p>Somos un grupo apasionado de estudiantes comprometidos en impulsar la visibilidad y la vibrante energía de nuestra carrera universitaria. En la travesía de nuestro aprendizaje, nos hemos unido con el objetivo común de destacar los logros, las experiencias y la diversidad que define nuestra carrera.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="our-team">
+    <div class="our-team-container">
+        <div class="text">
+            <h1>Nuestro Equipo</h1>
+        </div>
+
+        <div class="dev-cards" *ngFor="let item of devs">
+            <div class="row dev-card" >
+                <div class="dev-img">
+                    <img [src]="apiUrl + item.foto.sizes.tablet.url" alt="">
+                </div>
+                <div class="dev-info">
+                    <h3 class="dev-nombre">{{item.nombre}}</h3>
+                    <p class="dev-rol">{{item.rol}}</p>
+                </div>
+                <div class="redes-sociales">
+                    <mat-icon>facebook</mat-icon>
+                    <mat-icon>linkedin</mat-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

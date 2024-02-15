@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { ClubComponent } from './club/club.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 // Components from module
 import { HomeComponent } from '../pages/home/home.component';
@@ -16,6 +17,7 @@ import { MaestroComponent } from './maestro/maestro.component';
 
 @NgModule({
   declarations: [
+    AboutUsComponent,
     HomeComponent,
     NoticiasComponent,
     NoticiaComponent,
