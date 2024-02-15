@@ -7,14 +7,12 @@ import { environment } from 'src/environment/environment';
 import { Doc } from '../interfaces/Clubes';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-
-  private API_URL = environment.localUrl //local
-  //private  API_URL = environment.baseUrl; //server
+  // private API_URL = environment.localUrl //local
+  private API_URL = environment.baseUrl; //server
   private headers;
-
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
@@ -43,10 +41,6 @@ export class ApiService {
   }
 
   getNoticias(): Observable<Noticias> {
-    return this.http.get<Noticias>(this.API_URL + 'noticias',);
-  };
-
+    return this.http.get<Noticias>(this.API_URL + 'noticias');
+  }
 }
-
-
-
