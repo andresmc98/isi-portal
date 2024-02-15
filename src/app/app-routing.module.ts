@@ -5,8 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { NoticiaComponent } from './pages/noticia/noticia.component';
-import { ClubMenuComponent } from './components/club-menu/club-menu.component';
 import { ClubComponent } from './pages/club/club.component';
+import { MaestrosComponent } from './pages/maestros/maestros.component';
+import { MaestroComponent } from './pages/maestro/maestro.component';
 
 const appRoutes: Routes = [
   {
@@ -22,6 +23,8 @@ const appRoutes: Routes = [
     component: ClubComponent,
   },
   { path: 'noticias/:id', component: NoticiaComponent },
+  { path: 'maestros', component: MaestrosComponent },
+  { path: 'maestros/:maestro', component: MaestroComponent },
   {
     path: '**',
     redirectTo: '',
