@@ -3,7 +3,7 @@
   <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
     <div class="card">
       <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-      <p>{{ maestro.id }}</p>
+      <p>{{ maestro.nombre }}</p>
     </div>
   </a>
 </div>
@@ -12,7 +12,7 @@
   <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
     <div class="card">
       <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-      <p>{{ maestro.id }}</p>
+      <p>{{ maestro.nombre }}</p>
     </div>
   </a>
 </div>
@@ -21,7 +21,7 @@
   <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
     <div class="card">
       <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-      <p>{{ maestro.id }}</p>
+      <p>{{ maestro.nombre }}</p>
     </div>
   </a>
 </div>
