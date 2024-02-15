@@ -1,0 +1,27 @@
+<div id="maestros_carrera">
+  <app-title title="Maestros de carrera"></app-title>
+  <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
+    <div class="card">
+      <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
+      <p>{{ maestro.id }}</p>
+    </div>
+  </a>
+</div>
+<div id="maestros_ingenieria">
+  <app-title title="Maestros de ingeniería"></app-title>
+  <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
+    <div class="card">
+      <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
+      <p>{{ maestro.id }}</p>
+    </div>
+  </a>
+</div>
+<div id="maestros_tronco">
+  <app-title title="Maestros tronco común"></app-title>
+  <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
+    <div class="card">
+      <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
+      <p>{{ maestro.id }}</p>
+    </div>
+  </a>
+</div>

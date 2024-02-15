@@ -1,0 +1,53 @@
+<div>
+  <app-title title="{{ maestro.nombre }}"></app-title>
+  <div class="photo-info">
+    <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
+    <div>
+      <p>Correo: {{ maestro.contacto[0].correo_inst }}</p>
+      <p>Cubiculo: {{ maestro.contacto[0].cubiculo }}</p>
+      <p>Redes:</p>
+      <div class="redes">
+        <a
+          href="{{ maestro.contacto[0].linkedin }}"
+          target=""
+          *ngIf="maestro.contacto[0].linkedin"
+        >
+          <mat-icon>facebook</mat-icon>
+        </a>
+        <a
+          href="{{ maestro.contacto[0].github }}"
+          target=""
+          *ngIf="maestro.contacto[0].github"
+        >
+          <mat-icon>facebook</mat-icon>
+        </a>
+        <a
+          href="{{ maestro.contacto[0].pagina_web }}"
+          target=""
+          *ngIf="maestro.contacto[0].pagina_web"
+        >
+          <mat-icon>facebook</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <app-title title="Formación académica"></app-title>
+    <div *ngFor="let formacion of maestro.formacion_academica">
+      <h1>Institución: {{ formacion.nombre_institucion }}</h1>
+      <p>Certificación: {{ formacion.certificacion }}</p>
+      <p>Fecha de obtención: {{ formacion.fecha_obtencion }}</p>
+    </div>
+    <app-title title="Experiencia laboral"></app-title>
+
+    <div *ngFor="let experiencia of maestro.experiencia_laboral">
+      <h1>Nombre de la empresa: {{ experiencia.nombre_empresa }}</h1>
+      <p>Descripción: {{ experiencia.descripcion_exp }}</p>
+    </div>
+    <app-title title="Proyectos e investigaciones"></app-title>
+    <div *ngFor="let proyecto of maestro.proyectos">
+      <h1>Nombre del proyecto: {{ proyecto.nombre_proyecto }}</h1>
+      <p>Descripción del proyecto: {{ proyecto.descripcion_proyecto }}</p>
+    </div>
+  </div>
+</div>

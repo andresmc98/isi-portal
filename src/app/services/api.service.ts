@@ -8,13 +8,13 @@ import { Doc } from '../interfaces/Clubes';
 import { Dev } from '../interfaces/Devs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
 
   //private API_URL = environment.localUrl //local
   private  API_URL = environment.baseUrl; //server
-  private headers;
+
 
 
   constructor(private http: HttpClient) {
@@ -52,10 +52,6 @@ export class ApiService {
 }
 
   getNoticias(): Observable<Noticias> {
-    return this.http.get<Noticias>(this.API_URL + 'noticias',);
-  };
-
+    return this.http.get<Noticias>(this.API_URL + 'noticias');
+  }
 }
-
-
-

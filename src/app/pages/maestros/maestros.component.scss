@@ -1,0 +1,16 @@
+.card {
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+
+  img {
+    width: 50%;
+  }
+
+  p {
+    margin: 1rem;
+    max-height: 80px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+}
