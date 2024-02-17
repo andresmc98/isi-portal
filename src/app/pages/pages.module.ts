@@ -14,6 +14,8 @@ import { NoticiasComponent } from '../pages/noticias/noticias.component';
 import { NoticiaComponent } from '../pages/noticia/noticia.component';
 import { MaestrosComponent } from './maestros/maestros.component';
 import { MaestroComponent } from './maestro/maestro.component';
+import { MateriasComponent } from './materias/materias.component';
+import { MateriaComponent } from './materia/materia.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { MaestroComponent } from './maestro/maestro.component';
     ClubComponent,
     MaestrosComponent,
     MaestroComponent,
+    MateriasComponent,
+    MateriaComponent,
   ],
   imports: [CommonModule, SharedModule, ComponentsModule, RouterModule],
   exports: [HomeComponent, NoticiasComponent, NoticiaComponent, ClubComponent],
