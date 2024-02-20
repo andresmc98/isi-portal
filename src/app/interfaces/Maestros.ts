@@ -1,5 +1,5 @@
 export interface Maestros {
-    maestro:       Maestro[];
+    Maestro:       Maestro[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;
@@ -23,14 +23,12 @@ export interface Maestro {
     investigaciones:     Investigacione[];
     createdAt:           Date;
     updatedAt:           Date;
+    redes_sociales:      RedesSociale[];
 }
 
 export interface Contacto {
     correo_inst: string;
     cubiculo:    string;
-    linkedin:    string;
-    github:      string;
-    pagina_web:  string;
     id:          string;
 }
 
@@ -78,13 +76,17 @@ export interface Card {
 export interface Investigacione {
     nombre_inv:      string;
     descripcion_inv: string;
-    imagen_inv:      Foto;
     id:              string;
 }
 
 export interface Proyecto {
     nombre_proyecto:      string;
     descripcion_proyecto: string;
-    imagen_proyecto:      Foto;
     id:                   string;
+}
+
+export interface RedesSociale {
+    nombre_red: string;
+    link_red:   string;
+    id:         string;
 }
