@@ -3,23 +3,12 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-title',
   template: `
-    <h1>
+    <h1 class="mt-8 font-lexend text-3xl font-medium">
       {{ title }}
     </h1>
-    <div class="divider"></div>
+    <div class="h-2 bg-yellow-400 rounded-2xl"></div>
   `,
-  styles: [
-    `
-      h1 {
-        margin-top: 2rem;
-      }
-      .divider {
-        height: 0.5rem;
-        background-color: var(--amarillo-principal);
-        border-radius: 1rem;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class TitleComponent {
   @Input() title: string = '';
