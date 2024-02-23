@@ -1,130 +1,130 @@
-#about-us {
-    background-color: #ffc300;
+// #about-us {
+//     background-color: #ffc300;
 
-    .about-us-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
+//     .about-us-container {
+//         display: flex;
+//         flex-wrap: wrap;
+//         gap: 20px;
+//         padding: 20px;
 
-        .text {
-            flex-grow: 1;
-            color: #003566;
+//         .text {
+//             flex-grow: 1;
+//             color: #003566;
 
-            h1 {
-                text-align: center;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                text-shadow: 2px 2px 4px white;
-                font-size: 32px;
-                font-weight: bold;
-            }
-        }
-    }
-}
+//             h1 {
+//                 text-align: center;
+//                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//                 text-shadow: 2px 2px 4px white;
+//                 font-size: 32px;
+//                 font-weight: bold;
+//             }
+//         }
+//     }
+// }
 
-#nosotros{
+// #nosotros{
 
-    .nosotros-container{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
+//     .nosotros-container{
+//         display: flex;
+//         flex-wrap: wrap;
+//         gap: 20px;
+//         padding: 20px;
 
-        .img{
-            display: flex;
-            img{
-                max-width: 100%;
-                height: auto;
-            }
-        }
+//         .img{
+//             display: flex;
+//             img{
+//                 max-width: 100%;
+//                 height: auto;
+//             }
+//         }
 
-        .text{
+//         .text{
 
-            flex: auto;
-            color: black;
+//             flex: auto;
+//             color: black;
 
-            h2 {
-                font-size: 12px;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-        }
-    }
-}
+//             h2 {
+//                 font-size: 12px;
+//                 margin-top: 10px;
+//                 margin-bottom: 10px;
+//             }
+//         }
+//     }
+// }
 
-#our-team{
-    background-color: #ffc300;
+// #our-team{
+//     background-color: #ffc300;
 
-    .our-team-container{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
+//     .our-team-container{
+//         display: flex;
+//         flex-wrap: wrap;
+//         gap: 20px;
+//         padding: 20px;
 
-        .text {
-            flex-grow: 1;
-            color: #003566;
+//         .text {
+//             flex-grow: 1;
+//             color: #003566;
 
-            h1 {
-                text-align: center;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                text-shadow: 2px 2px 4px white;
-                font-size: 32px;
-                font-weight: bold;
-            }
-        }
+//             h1 {
+//                 text-align: center;
+//                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//                 text-shadow: 2px 2px 4px white;
+//                 font-size: 32px;
+//                 font-weight: bold;
+//             }
+//         }
 
-        .dev-card{
-            display: flex;
-            align-items: center;
-            width: calc(100% - 20px); // Ajusta el ancho de las tarjetas y el espacio entre ellas
-            margin-bottom: 20px;
-            margin-left: 10px;
-            margin-right: 10px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); // Aplica sombra
-            transition: box-shadow 0.3s ease; // Agrega una transición de sombra
-        }
+//         .dev-card{
+//             display: flex;
+//             align-items: center;
+//             width: calc(100% - 20px); // Ajusta el ancho de las tarjetas y el espacio entre ellas
+//             margin-bottom: 20px;
+//             margin-left: 10px;
+//             margin-right: 10px;
+//             background-color: #ffffff;
+//             border-radius: 10px;
+//             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); // Aplica sombra
+//             transition: box-shadow 0.3s ease; // Agrega una transición de sombra
+//         }
 
-        .dev-img{
-            display: flex;
-            img{
-                max-width: 100%;
-                height: auto;
-            }
-        }
+//         .dev-img{
+//             display: flex;
+//             img{
+//                 max-width: 100%;
+//                 height: auto;
+//             }
+//         }
 
-        .dev-info{
-            flex: auto;
-            color: black;
+//         .dev-info{
+//             flex: auto;
+//             color: black;
 
-            h2 {
-                font-size: 12px;
-                margin-top: 10px;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-        }
+//             h2 {
+//                 font-size: 12px;
+//                 margin-top: 10px;
+//                 margin-bottom: 10px;
+//                 text-align: center;
+//             }
+//         }
 
-        .dev-nombre{
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-            text-align: center;
-        }
+//         .dev-nombre{
+//             font-size: 1.2rem;
+//             font-weight: bold;
+//             margin-bottom: 5px;
+//             text-align: center;
+//         }
 
-        .dev-rol{
-            font-size: 1rem;
-            color: #004990;
-            text-align: center;
-        }
+//         .dev-rol{
+//             font-size: 1rem;
+//             color: #004990;
+//             text-align: center;
+//         }
 
-        .redes-sociales{
-            justify-content: center;
-            gap: 10px;
-            padding: 10px;
-            text-align: center;
-        }
-    }
-}
+//         .redes-sociales{
+//             justify-content: center;
+//             gap: 10px;
+//             padding: 10px;
+//             text-align: center;
+//         }
+//     }
+// }
