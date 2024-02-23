@@ -1,40 +1,42 @@
-<section id="about-us">
-    <div class="about-us-container">
-        <div class="text">
-            <h1>¿Quienes Somos?</h1>
+<!-- Banner Amarillo -->
+<section class="bg-unison-yellow">
+    <div class="flex flex-wrap gap-5 p-5">
+        <div class="grow text-unison-blue-dark">
+            <h1 class="text-center text-[32px] font-bold text-shadow shadow-white">¿Quienes Somos?</h1>
         </div>
     </div>
 </section>
 
-<section id="nosotros">
-    <div class="nosotros-container">
-        <div class="img">
-            <img [src]="apiUrl + mediaUs.sizes.tablet.url" alt="">
-        </div>
-        <div class="nosotros-descripcion">
-            <h2>¡Bienvenidos! </h2>
+<!--Foto Nosotros y descripcion-->
+<section>
+    <div class="flex">
+        <img class="max-w-full h-auto" [src]="apiUrl + mediaUs.sizes.tablet.url" alt="">
+    </div>
+    <div class="flex flex-wrap gap-5 p-5">
+        <div>
+            <h2 class="flex-auto text-black">¡Bienvenidos! </h2>
             <p>Somos un grupo apasionado de estudiantes comprometidos en impulsar la visibilidad y la vibrante energía de nuestra carrera universitaria. En la travesía de nuestro aprendizaje, nos hemos unido con el objetivo común de destacar los logros, las experiencias y la diversidad que define nuestra carrera.</p>
         </div>
-
     </div>
 </section>
 
-<section id="our-team">
-    <div class="our-team-container">
-        <div class="text">
-            <h1>Nuestro Equipo</h1>
+<!--Nuestrp equipo -->
+<section class="bg-unison-yellow">
+    <div class="flex flex-wrap gap-5 p-5">
+        <div class="grow text-unison-blue-dark">
+            <h1 class="text-center text-[32px] font-bold text-shadow shadow-white">Nuestro Equipo</h1>
         </div>
 
-        <div class="dev-cards" *ngFor="let item of devs">
-            <div class="row dev-card" >
-                <div class="dev-img">
-                    <img [src]="apiUrl + item.foto.sizes.tablet.url" alt="">
+        <div class="flex items-center w-[calc(100%_-_20px)] bg-white shadow-[0px_5px_15px_rgba(0,0,0,0.1)] mx-2.5 rounded-[10px]" *ngFor="let item of devs">
+            <div class="row" >
+                <div class="flex">
+                    <img class="max-w-full h-auto rounded-xl" [src]="apiUrl + item.foto.sizes.tablet.url" alt="">
                 </div>
-                <div class="dev-info">
-                    <h3 class="dev-nombre">{{item.nombre}}</h3>
-                    <p class="dev-rol">{{item.rol}}</p>
+                <div class="flex-auto text-black">
+                    <h3 class="text-[1.2rem] font-bold text-center">{{item.nombre}}</h3>
+                    <p class="text-base text-unison-blue-light text-center">{{item.rol}}</p>
                 </div>
-                <div class="redes-sociales">
+                <div class="justify-center gap-2.5 text-center p-2.5">
                     <mat-icon>facebook</mat-icon>
                     <mat-icon>linkedin</mat-icon>
                 </div>
