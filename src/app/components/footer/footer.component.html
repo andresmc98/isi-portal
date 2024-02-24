@@ -1,25 +1,30 @@
-<div class="footer">
-  <div class="info">
-    <div>
-      <mat-icon>location_on</mat-icon>
-      <a href="https://maps.app.goo.gl/zq7ETmXosQ7tJ6Nb7"
-        >Avenida Universidad con Calle de la Sabiduría, Edificio 5J, Planta
-        Baja. Hermosillo, Son.</a
-      >
-    </div>
-    <div><mat-icon>call</mat-icon> <a href="">662-992-20-94</a></div>
-    <div>
-      <mat-icon>email</mat-icon> <a href="">departamentoisi@unison.mx</a>
-    </div>
+<!-- Footer -->
+<div class="flex flex-col py-2 px-4 bg-unison-yellow mt-4">
+  <!-- Information -->
+  <p class="font-medium text-2xl text-center">Contacto</p>
+  <div class="flex flex-col">
+    <a
+      href="{{ item.enlace }}"
+      *ngFor="let item of info"
+      class="mt-2 hover:text-inherit"
+    >
+      <p>
+        <mat-icon class="align-middle mr-2">{{ item.icono }}</mat-icon>
+        {{ item.info }}
+      </p>
+    </a>
   </div>
-  <div class="social">
-    <p>Redes sociales</p>
-    <div>
-      <mat-icon>facebook</mat-icon>
-      <mat-icon>facebook</mat-icon>
-      <mat-icon>facebook</mat-icon>
-      <mat-icon>facebook</mat-icon>
-      <mat-icon>facebook</mat-icon>
+  <!-- Social media -->
+  <div class="flex flex-col mt-2">
+    <p class="font-medium text-2xl text-center">Redes sociales</p>
+    <div class="flex justify-between w-4/6 mx-auto mt-3">
+      <a
+        href="{{ item.enlace }}"
+        *ngFor="let item of social"
+        class="text-lg {{ item.hoverColor }} hover:scale-125"
+      >
+        <i class="iconoir-{{ item.icono }}"></i>
+      </a>
     </div>
   </div>
 </div>
