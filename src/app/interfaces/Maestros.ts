@@ -23,7 +23,8 @@ export interface Maestro {
     investigaciones:     Investigacione[];
     createdAt:           Date;
     updatedAt:           Date;
-    redes_sociales:      RedesSociale[];
+    redes_sociales:      any[];
+    tipo:                string;
 }
 
 export interface Contacto {
@@ -77,16 +78,12 @@ export interface Investigacione {
     nombre_inv:      string;
     descripcion_inv: string;
     id:              string;
+    imagen_inv?:     Foto;
 }
 
 export interface Proyecto {
     nombre_proyecto:      string;
     descripcion_proyecto: string;
     id:                   string;
-}
-
-export interface RedesSociale {
-    nombre_red: string;
-    link_red:   string;
-    id:         string;
+    imagen_proyecto?:     Foto;
 }
