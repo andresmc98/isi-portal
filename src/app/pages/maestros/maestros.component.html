@@ -1,27 +1,50 @@
-<div id="maestros_carrera">
+<div class="mx-4">
   <app-title title="Maestros de carrera"></app-title>
   <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
-    <div class="card">
-      <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-      <p>{{ maestro.nombre }}</p>
+    <div
+      class="flex flex-row w-auto mt-3 p-3 bg-slate-100 rounded-xl drop-shadow-xl"
+    >
+      <img
+        [src]="apiUrl + maestro.foto.sizes.tablet.url"
+        alt=""
+        class="w-1/2"
+      />
+      <div class="px-3 space-y-2">
+        <p class="font-medium text-lg">{{ maestro.nombre }}</p>
+        <p class="text-sm">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
+      </div>
     </div>
   </a>
-</div>
-<div id="maestros_ingenieria">
-  <app-title title="Maestros de ingeniería"></app-title>
+  <app-title title="Maestros de ingenería"></app-title>
   <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
-    <div class="card">
-      <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-      <p>{{ maestro.nombre }}</p>
+    <div
+      class="flex flex-row w-auto mt-3 p-3 bg-slate-100 rounded-xl drop-shadow-xl"
+    >
+      <img
+        [src]="apiUrl + maestro.foto.sizes.tablet.url"
+        alt=""
+        class="w-1/2"
+      />
+      <div class="px-3 space-y-2">
+        <p class="font-medium text-lg">{{ maestro.nombre }}</p>
+        <p class="text-sm">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
+      </div>
     </div>
   </a>
-</div>
-<div id="maestros_tronco">
-  <app-title title="Maestros tronco común"></app-title>
-  <a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
-    <div class="card">
-      <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-      <p>{{ maestro.nombre }}</p>
+  <app-title title="Maestros de tronco"></app-title
+  ><a *ngFor="let maestro of maestros" href="/maestros/{{ maestro.id }}">
+    <div
+      class="flex flex-row w-auto mt-3 p-3 bg-slate-100 rounded-xl drop-shadow-xl"
+    >
+      <img
+        [src]="apiUrl + maestro.foto.sizes.tablet.url"
+        alt=""
+        class="w-1/2"
+      />
+      <div class="px-3 space-y-2">
+        <p class="font-medium text-lg">{{ maestro.nombre }}</p>
+        <p class="text-sm">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
+      </div>
     </div>
   </a>
 </div>
