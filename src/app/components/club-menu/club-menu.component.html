@@ -1,30 +1,20 @@
-<!-- Estatico -->
-<!--
-  <div class="club-container">
-  <img [src]="clubUrl" alt="" />
-  <div class="club-text">
-    <h1>{{ clubName }}</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam quidem
-      voluptates accusantium, ad quae iste et possimus, atque fuga perferendis
-      sit, mollitia ut harum dolorem maxime nemo facilis aperiam? Esse!
+<div class="flex mt-4" *ngFor="let item of clubes">
+  <img
+    [src]="apiUrl + [item.logo.sizes.tablet.url]"
+    alt=""
+    class="w-40 h-40 mr-4"
+    [routerLink]="['/clubes/' + item.nombre]"
+  />
+  <div>
+    <p class="text-2xl font-semibold" [routerLink]="['/clubes/' + item.nombre]">
+      {{ item.nombre | uppercase }}
+    </p>
+    <p class="text-base font-normal mt-2">{{ item.descripcion }}</p>
+    <p
+      [routerLink]="['/clubes/' + item.nombre]"
+      class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic"
+    >
+      Conoce más
     </p>
   </div>
 </div>
--->
-
-<!-- Dinamico -->
-<!-- He envuelto el contenido del club en un enlace <a> que utiliza el routerLink
-  para dirigir a la página del csti o csi como párametro en la URL-->
-<div class="club-container" *ngFor="let item of clubes">
-    <!-- <img [src]="'http://localhost:3004'+[item?.logo?.sizes?.thumbnail?.url]" alt="" /> -->
-    <img [src]="apiUrl+[item.logo.sizes.tablet.url]" alt="" />
-    <div class="club-text">
-      <h1>{{item.nombre}}</h1>
-      <p>{{item.descripcion}}</p>
-      <!-- <p>{{ item.descripcion[0].children[0].text }}</p> -->
-      <a [routerLink]="['/clubes/'+ item.nombre]">Ver mas</a>
-    </div>
-</div>
-
-
