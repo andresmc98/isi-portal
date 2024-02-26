@@ -1,48 +1,48 @@
 export interface Noticias {
-    docs:          Doc[];
-    totalDocs:     number;
-    limit:         number;
-    totalPages:    number;
-    page:          number;
+    docs: Doc[];
+    totalDocs: number;
+    limit: number;
+    totalPages: number;
+    page: number;
     pagingCounter: number;
-    hasPrevPage:   boolean;
-    hasNextPage:   boolean;
-    prevPage:      null;
-    nextPage:      null;
+    hasPrevPage: boolean;
+    hasNextPage: boolean;
+    prevPage: null;
+    nextPage: null;
 }
 
 export interface Doc {
-    id:               string;
-    titulo:           string;
-    image:            Image;
-    tag:              string;
-    autorPortal:      string;
+    id: string;
+    titulo: string;
+    image: Image;
+    tag: string;
+    autorPortal: string;
     fechaPublicacion: Date;
-    contenido:        Contenido[];
-    createdAt:        Date;
-    updatedAt:        Date;
+    contenido: Contenido[];
+    createdAt: Date;
+    updatedAt: Date;
 }
 
 export interface Contenido {
-    children:    ContenidoChild[];
-    type?:       string;
+    children: ContenidoChild[];
+    type?: string;
     relationTo?: string;
-    value?:      Image;
+    value?: Image;
 }
 
 export interface ContenidoChild {
-    text?:     string;
+    text?: string;
     children?: PurpleChild[];
-    type?:     string;
+    type?: string;
 }
 
 export interface PurpleChild {
-    text?:     string;
+    text?: string;
     children?: FluffyChild[];
     linkType?: string;
-    newTab?:   boolean;
-    type?:     string;
-    url?:      string;
+    newTab?: boolean;
+    type?: string;
+    url?: string;
 }
 
 export interface FluffyChild {
@@ -50,29 +50,29 @@ export interface FluffyChild {
 }
 
 export interface Image {
-    id:        string;
-    filename:  string;
-    mimeType:  string;
-    filesize:  number;
-    width:     number;
-    height:    number;
-    sizes:     Sizes;
+    id: string;
+    filename: string;
+    mimeType: string;
+    filesize: number;
+    width: number;
+    height: number;
+    sizes: Sizes;
     createdAt: Date;
     updatedAt: Date;
-    url:       string;
+    url: string;
 }
 
 export interface Sizes {
     thumbnail: Card;
-    card:      Card;
-    tablet:    Card;
+    card: Card;
+    tablet: Card;
 }
 
 export interface Card {
-    width?:    number;
-    height?:   number;
+    width?: number;
+    height?: number;
     mimeType?: string;
     filesize?: number;
     filename?: string;
-    url?:      string;
+    url?: string;
 }
