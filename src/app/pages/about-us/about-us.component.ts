@@ -21,7 +21,7 @@ export class AboutUsComponent implements OnInit{
   ngOnInit(): void{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.getMediaByID('65d8d1e0a859f8678c2d31ac')
+    this.getMediaByID('65dfa8d92fdc50ead6b582d4')
     console.log('MediaUs', this.mediaUs);
     this.getDevs();
   }
