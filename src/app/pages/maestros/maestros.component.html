@@ -11,7 +11,7 @@
           [src]="apiUrl + maestro.foto.url"
           alt=""
           class="w-1/2"
-          [routerLink]="['/maestros/' + maestro.nombre]"
+          [routerLink]="['/maestros/' + maestro.id]"
         />
         <div class="px-3 space-y-2">
           <p class="font-medium text-xl">{{ maestro.nombre }}</p>
@@ -40,7 +40,7 @@
           [src]="apiUrl + maestro.foto.url"
           alt=""
           class="w-1/2"
-          [routerLink]="['/maestros/' + maestro.nombre]"
+          [routerLink]="['/maestros/' + maestro.id]"
         />
         <div class="px-3 space-y-2">
           <p class="font-medium text-xl">{{ maestro.nombre }}</p>
@@ -69,7 +69,7 @@
           [src]="apiUrl + maestro.foto.url"
           alt=""
           class="w-1/2"
-          [routerLink]="['/maestros/' + maestro.nombre]"
+          [routerLink]="['/maestros/' + maestro.id]"
         />
         <div class="px-3 space-y-2">
           <p class="font-medium text-xl">{{ maestro.nombre }}</p>
