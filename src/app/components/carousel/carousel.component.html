@@ -42,7 +42,7 @@
     <!--Indicador-->
     <div id="indicador" class="flex space-x-3 justify-center mt-2">
         <div *ngFor="let active of indicators; let i = index"
-            class="bg-unison-blue-light rounded-full w-4 h-4 cursor-pointer transition duration-300"
+            class="bg-slate-400 rounded-full w-4 h-4 cursor-pointer transition duration-300"
             (click)="goToSlide(i)" [ngClass]="{'bg-unison-blue-dark': active}">
         </div>
     </div>

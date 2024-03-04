@@ -54,4 +54,8 @@ export class ApiService {
   getNoticias(): Observable<Noticias> {
     return this.http.get<Noticias>(this.API_URL + 'noticias');
   }
+
+  getFAQs(): Observable<any> {
+    return this.http.get<any>(this.API_URL + 'Faqs');
+  }
 }

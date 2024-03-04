@@ -11,6 +11,7 @@ import { MaestrosComponent } from './pages/maestros/maestros.component';
 import { MaestroComponent } from './pages/maestro/maestro.component';
 import { MateriaComponent } from './pages/materia/materia.component';
 import { MateriasComponent } from './pages/materias/materias.component';
+import { FaqComponent } from './pages/faq/faq.component';
 
 
 const appRoutes: Routes = [
@@ -23,22 +24,24 @@ const appRoutes: Routes = [
     component: ClubComponent,
   },
   {
-    path:'nosotros',
+    path: 'nosotros',
     component: AboutUsComponent
   },
   {
     path: 'noticias',
     component: NoticiasComponent,
   },
-  { 
-    path: 'noticias/:id', 
-    component: NoticiaComponent },
-  { 
-    path: 'maestros', 
-    component: MaestrosComponent },
-  { 
-    path: 'maestros/:maestro', 
-    component: MaestroComponent 
+  {
+    path: 'noticias/:id',
+    component: NoticiaComponent
+  },
+  {
+    path: 'maestros',
+    component: MaestrosComponent
+  },
+  {
+    path: 'maestros/:maestro',
+    component: MaestroComponent
   },
   {
     path: 'materias',
@@ -47,6 +50,10 @@ const appRoutes: Routes = [
   {
     path: 'materias/:materia',
     component: MateriaComponent,
+  },
+  {
+    path: 'FAQ',
+    component: FaqComponent,
   },
   {
     path: '**',
@@ -59,4 +66,4 @@ const appRoutes: Routes = [
   imports: [RouterModule.forRoot(appRoutes, { useHash: false })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
