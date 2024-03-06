@@ -1,5 +1,5 @@
 export interface Clubes {
-    docs:          Doc[];
+    Club:          Club[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;
@@ -11,7 +11,7 @@ export interface Clubes {
     nextPage:      null;
 }
 
-export interface Doc {
+export interface Club {
     id:                 string;
     nombre:             string;
     logo:               Logo;
@@ -62,22 +62,29 @@ export interface Card {
 export interface Proyecto {
     nombre_proyecto:      string;
     descripcion_proyecto: string;
-    imagen_proyecto:      Logo;
+    imagen_proyecto:      ImagenProyecto[];
     id:                   string;
 }
 
+export interface ImagenProyecto {
+    imagen_proyecto: Logo;
+    id:              string;
+}
+
 export interface RedesSociale {
-    link_fb:    string;
-    link_insta: string;
-    link_x:     string;
-    github:     string;
-    pagina_web: string;
+    nombre_red: string;
+    link_red:   string;
     id:         string;
 }
 
 export interface Servicio {
     nombre_servicio:      string;
     descripcion_servicio: string;
-    imagen_servicio:      Logo;
+    imagen_servicio:      ImagenServicio[];
     id:                   string;
+}
+
+export interface ImagenServicio {
+    imagen_servicio: Logo;
+    id:              string;
 }
