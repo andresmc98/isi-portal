@@ -5,7 +5,7 @@ import { Noticia, Noticias } from '../interfaces/Noticias';
 import { Clubes } from '../interfaces/Clubes';
 import { environment } from 'src/environment/environment';
 import { Club } from '../interfaces/Clubes';
-import { Dev } from '../interfaces/Devs';
+import { Dev, Devs } from '../interfaces/Devs';
 
 @Injectable({
   providedIn: 'root',
@@ -35,8 +35,8 @@ export class ApiService {
     return this.http.get<any>(this.API_URL + 'devs');
   }
 
-  getMaestros(): Observable<any> {
-    return this.http.get<any>(this.API_URL + 'maestros');
+  getMaestros(): Observable<Dev> {
+    return this.http.get<Dev>(this.API_URL + 'maestros');
   }
 
   getMaestroById(id: string): Observable<any> {

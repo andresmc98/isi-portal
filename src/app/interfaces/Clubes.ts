@@ -1,5 +1,5 @@
 export interface Clubes {
-    Club:          Club[];
+    docs:          Club[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;

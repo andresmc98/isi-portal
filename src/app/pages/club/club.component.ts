@@ -35,7 +35,7 @@ export class ClubComponent implements OnInit {
       // Convertir el nombre del club y el parámetro de búsqueda a minúsculas
       const lowercaseClubNombre = clubNombre.toLowerCase();
       // Filtrar la lista de clubes para mostrar solo el club con el nombre correspondiente
-      this.clubes = res.Club.filter(club => club.nombre.toLowerCase() === lowercaseClubNombre);
+      this.clubes = res.docs.filter(club => club.nombre.toLowerCase() === lowercaseClubNombre);
       console.log('Filtered Clubs:', this.clubes);
     }, error => {
       console.log('getClubesError', error);

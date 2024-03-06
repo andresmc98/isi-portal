@@ -23,7 +23,7 @@ export class ClubMenuComponent implements OnInit {
     this.apiservice.getClubes().subscribe(
       (res) => {
         console.log('getClubesResponse', res);
-        this.clubes = res.Club;
+        this.clubes = res.docs;
       },
       (error) => {
         console.log('getClubesError', error);
