@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Noticia, Noticias } from '../interfaces/Noticias';
 import { Clubes } from '../interfaces/Clubes';
 import { environment } from 'src/environment/environment';
-import { Doc } from '../interfaces/Clubes';
+import { Club } from '../interfaces/Clubes';
 import { Dev } from '../interfaces/Devs';
 
 @Injectable({
@@ -27,8 +27,8 @@ export class ApiService {
     return this.http.get<Clubes>(this.API_URL + 'clubes');
   }
 
-  getClubById(id: string): Observable<Doc> {
-    return this.http.get<Doc>(this.API_URL + 'clubes/' + id);
+  getClubById(id: string): Observable<Club> {
+    return this.http.get<Club>(this.API_URL + 'clubes/' + id);
   }
 
   getDevs(): Observable<any> {
