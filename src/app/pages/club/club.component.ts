@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { Doc } from 'src/app/interfaces/Clubes';
+import { Club } from 'src/app/interfaces/Clubes';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -10,7 +10,7 @@ import { environment } from 'src/environment/environment';
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent implements OnInit {
-  clubes: Doc[] = [];
+  clubes: Club[] = [];
   apiUrl = environment.baseMediaUrl; //server
   clubNombre: string = '';
 
@@ -35,7 +35,7 @@ export class ClubComponent implements OnInit {
       // Convertir el nombre del club y el parámetro de búsqueda a minúsculas
       const lowercaseClubNombre = clubNombre.toLowerCase();
       // Filtrar la lista de clubes para mostrar solo el club con el nombre correspondiente
-      this.clubes = res.docs.filter(club => club.nombre.toLowerCase() === lowercaseClubNombre);
+      this.clubes = res.Club.filter(club => club.nombre.toLowerCase() === lowercaseClubNombre);
       console.log('Filtered Clubs:', this.clubes);
     }, error => {
       console.log('getClubesError', error);
