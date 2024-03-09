@@ -1,8 +1,15 @@
-<div
-  class="flex flex-col items-center justify-center h-40 rounded-[30%] bg-[#ebebeb] shadow-[26px_26px_52px_#c8c8c8] hover:bg-[#cacaca]"
->
-  <img [src]="iconUrl" alt="Icon" class="w-20 h-20" />
-  <h2 class="text-black text-lg mt-2 font-semibold">
-    {{ iconName | titlecase }}
-  </h2>
+<div class="mt-4 grid gap-4 grid-cols-2 tablet:grid-cols-2">
+  <div
+    class="flex items-center justify-center h-40 gap-4 rounded-[30%] bg-[#ebebeb] shadow-[26px_26px_52px_#c8c8c8] hover:bg-[#cacaca]"
+    *ngFor="let item of sections"
+    [routerLink]="item.route"
+  >
+    <div class="flex flex-col">
+      <img [src]="item.imgPath" alt="Icon" class="w-20 h-20" />
+      <p class="text-black text-lg mt-2 font-semibold">
+        {{ item.label }}
+      </p>
+    </div>
+    <p class="hidden tablet:block tablet:basis-1/2">{{ item.desc }}</p>
+  </div>
 </div>
