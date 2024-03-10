@@ -7,7 +7,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TitleComponent } from './title/title.component';
 import { IconMenuComponent } from './icon-menu/icon-menu.component';
 import { ClubMenuComponent } from '../components/club-menu/club-menu.component';
-import { SerializerComponent } from './serializer/serializer.component';
 import { RichtextDisplayComponent } from './richtext-display/richtext-display.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { RichtextDisplayComponent } from './richtext-display/richtext-display.co
     TitleComponent,
     IconMenuComponent,
     ClubMenuComponent,
-    SerializerComponent,
     RichtextDisplayComponent,
   ],
   imports: [CommonModule, AppMaterialModule, RouterModule, MatToolbarModule],

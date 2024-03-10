@@ -1,10 +1,10 @@
 <div class="body">
   <img
-    src="https://img.freepik.com/fotos-premium/equipo-estudiantes-que-completan-tarea_23-2147666610.jpg"
+    [src]=" apiUrl + news?.image?.sizes?.tablet?.url" 
     alt=""
     srcset=""
   />
-  <app-title [title]="'Noticia ' + newsId"></app-title>
-  <p class="date">Hermosillo, Sonora, 9 de diciembre de 2023.</p>
+  <app-title [title]="'Noticia ' + news?.titulo"></app-title>
+  <p class="date">Hermosillo, Sonora, {{news?.fechaPublicacion | date: "longDate"}}.</p>
   <app-richtext-display [content]="newsContent"></app-richtext-display>
 </div>

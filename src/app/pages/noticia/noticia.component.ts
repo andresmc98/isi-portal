@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-noticia',
@@ -8,7 +9,9 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./noticia.component.scss'],
 })
 export class NoticiaComponent {
+  apiUrl = environment.baseMediaUrl; //server
   newsId!: string;
+  news: any;
   newsContent: any;
   constructor(private route: ActivatedRoute, private apiService: ApiService ) {}
 
@@ -16,14 +19,15 @@ export class NoticiaComponent {
     // Obtener el parámetro 'id' de la URL
     this.route.paramMap.subscribe((params) => {
       this.newsId = params.get('id')!;
-      this.getNoticia();
+      this.getNoticiaById();
     });
   }
 
-  getNoticia() {
+  getNoticiaById() {
     this.apiService.getNoticiaById(this.newsId).subscribe((data) => {
       console.log(data);
       console.log(data.contenido);
+      this.news = data;
       this.newsContent = data.contenido;
     });
   }

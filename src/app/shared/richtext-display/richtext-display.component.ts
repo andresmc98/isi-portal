@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { environment } from 'src/environment/environment';
 
 @Component({
   selector: 'app-richtext-display',
@@ -8,6 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class RichtextDisplayComponent implements OnInit {
 @Input() content: any[] = [];
+apiUrl = environment.baseMediaUrl; //server
 
 
 constructor(private sanitizer: DomSanitizer) { }
@@ -20,6 +22,6 @@ ngOnInit(): void {
   }
 
   isTextNode(node: any): boolean {
-    return node.hasOwnProperty('text') || node.bold || node.italic || node.underline;
+    return node.hasOwnProperty('text') || node.bold || node.italic || node.underline || node.strikethrough;
   }
 }

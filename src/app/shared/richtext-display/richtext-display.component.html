@@ -4,7 +4,9 @@
         <span [innerHTML]="getSafeHtml(node.text)"
           [class.bold]="node.bold"
           [class.italic]="node.italic"
-          [class.underline]="node.underline"></span>
+          [class.underline]="node.underline"
+          [class.strikethrough]="node.strikethrough">
+        </span>
     </ng-container>
     <ng-template #blockNode>
         <ng-container [ngSwitch]="node.type">
@@ -17,6 +19,7 @@
             <ul class="max-w-md space-y-1  list-disc list-inside" *ngSwitchCase="'ul'"><app-richtext-display [content]="node.children"></app-richtext-display></ul>
             <ol class="max-w-md space-y-1  list-decimal list-inside" *ngSwitchCase="'ol'"><app-richtext-display [content]="node.children"></app-richtext-display></ol>
             <li *ngSwitchCase="'li'"><app-richtext-display [content]="node.children"></app-richtext-display></li>
+            <img *ngSwitchCase="'upload'" [src]="apiUrl + node.value.sizes.thumbnail.url" alt="">
             <p *ngSwitchDefault><app-richtext-display [content]="node.children"></app-richtext-display></p>
         </ng-container>
     </ng-template>

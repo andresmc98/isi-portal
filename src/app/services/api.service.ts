@@ -12,8 +12,8 @@ import { Dev, Devs } from '../interfaces/Devs';
 })
 export class ApiService {
 
-  private API_URL = environment.localUrl //local
-  //private  API_URL = environment.baseUrl; //server
+  //private API_URL = environment.localUrl //local
+  private  API_URL = environment.baseUrl; //server
   private headers: HttpHeaders;
 
 
