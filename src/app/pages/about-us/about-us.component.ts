@@ -14,6 +14,7 @@ export class AboutUsComponent implements OnInit{
 
   mediaUs: Media = {} as Media;
   devs: Dev [] = [];
+  usPhoto = '65dfa8d92fdc50ead6b582d4'
   apiUrl = environment.baseMediaUrl; //server
 
   constructor(private apiservice: ApiService) { }
@@ -21,7 +22,7 @@ export class AboutUsComponent implements OnInit{
   ngOnInit(): void{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.getMediaByID('65dfa8d92fdc50ead6b582d4')
+    this.getMediaByID(this.usPhoto)
     console.log('MediaUs', this.mediaUs);
     this.getDevs();
   }
