@@ -11,11 +11,9 @@ import { Dev, Devs } from '../interfaces/Devs';
   providedIn: 'root',
 })
 export class ApiService {
-
   //private API_URL = environment.localUrl //local
-  private  API_URL = environment.baseUrl; //server
+  private API_URL = environment.baseUrl; //server
   private headers: HttpHeaders;
-
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
@@ -42,6 +40,9 @@ export class ApiService {
   getMaestroById(id: string): Observable<any> {
     return this.http.get<any>(this.API_URL + 'maestros/' + id);
   }
+  getMaestrosbyTipo(tipo: string): Observable<any> {
+    return this.http.get<any>(this.API_URL + 'maestros/tipo/' + tipo);
+  }
 
   getMaterias(): Observable<any> {
     return this.http.get<any>(this.API_URL + 'materias');
@@ -49,7 +50,7 @@ export class ApiService {
 
   getMediaByID(id: string): Observable<any> {
     return this.http.get<any>(this.API_URL + 'media/' + id);
-}
+  }
 
   getNoticias(): Observable<Noticias> {
     return this.http.get<Noticias>(this.API_URL + 'noticias');
