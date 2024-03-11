@@ -40,7 +40,6 @@ export class CarouselComponent implements AfterViewInit {
     this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length; //Modificar el número 3 por la cantidad de slides que tengas
     this.updateIndicators();
     this.showCurrentSlide();
-    console.log('Boton de nex cliqueado');
   }
 
   prevSlide() {
@@ -48,7 +47,6 @@ export class CarouselComponent implements AfterViewInit {
     this.currentSlideIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
     this.updateIndicators();
     this.showCurrentSlide();
-    console.log('Boton de prev cliqueado');
   }
 
   goToSlide(index: number){
@@ -81,4 +79,3 @@ export class CarouselComponent implements AfterViewInit {
 
 
 }
-
