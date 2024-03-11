@@ -1,22 +1,45 @@
 import { Component, Input } from '@angular/core';
 
+interface sections {
+  label: string;
+  imgPath: string;
+  desc: string;
+  route: string;
+}
+
 @Component({
   selector: 'app-icon-menu',
   templateUrl: './icon-menu.component.html',
 })
 export class IconMenuComponent {
   @Input() iconName: string = '';
-  iconUrl: string = '';
 
-  iconMap: { [key: string]: string } = {
-    profesores: 'assets/camisa.png',
-    alumnos: 'assets/gorro-de-graduacion.png',
-    historia: 'assets/cronologia.png',
-    preguntas: 'assets/salvavidas.png',
-  };
-  ngOnInit() {
-    this.iconUrl = this.iconMap[this.iconName];
-  }
+  sections: sections[] = [
+    {
+      label: 'Profesores',
+      imgPath: 'assets/camisa.png',
+      desc: 'lorem ipsum dolor sit amet, consectetur adip temp tincidunt et justo',
+      route: '/maestros',
+    },
+    {
+      label: 'Alumnos',
+      imgPath: 'assets/gorro-de-graduacion.png',
+      desc: 'lorem ipsum dolor sit amet, consectetur adip temp tincidunt et justo',
+      route: '/profesores',
+    },
+    {
+      label: 'Historia',
+      imgPath: 'assets/cronologia.png',
+      desc: 'lorem ipsum dolor sit amet, consectetur adip temp tincidunt et justo',
+      route: '/profesores',
+    },
+    {
+      label: 'Preguntas',
+      imgPath: 'assets/salvavidas.png',
+      desc: 'lorem ipsum dolor sit amet, consectetur adip temp tincidunt et justo',
+      route: '/profesores',
+    },
+  ];
 }
 
 // Icons atributions

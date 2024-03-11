@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Observable } from 'rxjs';
-import { Contenido, Doc, Noticias } from 'src/app/interfaces/Noticias';
+import { Contenido, Noticias } from 'src/app/interfaces/Noticias';
 
 @Component({
   selector: 'app-noticias',
