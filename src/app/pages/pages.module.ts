@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
 import { ClubComponent } from './club/club.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { ColorTagComponent } from '../components/color-tag/color-tag.component';
 
 // Components from module
 import { HomeComponent } from '../pages/home/home.component';
@@ -16,6 +16,7 @@ import { MaestrosComponent } from './maestros/maestros.component';
 import { MaestroComponent } from './maestro/maestro.component';
 import { MateriasComponent } from './materias/materias.component';
 import { MateriaComponent } from './materia/materia.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
