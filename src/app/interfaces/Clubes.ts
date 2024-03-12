@@ -29,7 +29,7 @@ export interface Club {
 export interface Logo {
     id:        string;
     filename:  string;
-    mimeType:  MIMEType;
+    mimeType:  string;
     filesize:  number;
     width:     number;
     height:    number;
@@ -37,11 +37,6 @@ export interface Logo {
     createdAt: Date;
     updatedAt: Date;
     url:       string;
-}
-
-export enum MIMEType {
-    ImageJPEG = "image/jpeg",
-    ImagePNG = "image/png",
 }
 
 export interface Sizes {
@@ -53,7 +48,7 @@ export interface Sizes {
 export interface Card {
     width:    number | null;
     height:   number | null;
-    mimeType: MIMEType | null;
+    mimeType: null | string;
     filesize: number | null;
     filename: null | string;
     url?:     string;
@@ -61,14 +56,25 @@ export interface Card {
 
 export interface Proyecto {
     nombre_proyecto:      string;
-    descripcion_proyecto: string;
-    imagen_proyecto:      ImagenProyecto[];
+    descripcion_proyecto: Descripcion[];
     id:                   string;
 }
 
-export interface ImagenProyecto {
-    imagen_proyecto: Logo;
-    id:              string;
+export interface Descripcion {
+    children:    DescripcionProyectoChild[];
+    type?:       string;
+    relationTo?: string;
+    value?:      Logo;
+}
+
+export interface DescripcionProyectoChild {
+    text?:     string;
+    children?: ChildChild[];
+    type?:     string;
+}
+
+export interface ChildChild {
+    text: string;
 }
 
 export interface RedesSociale {
@@ -79,12 +85,6 @@ export interface RedesSociale {
 
 export interface Servicio {
     nombre_servicio:      string;
-    descripcion_servicio: string;
-    imagen_servicio:      ImagenServicio[];
+    descripcion_servicio: Descripcion[];
     id:                   string;
-}
-
-export interface ImagenServicio {
-    imagen_servicio: Logo;
-    id:              string;
 }
