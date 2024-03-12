@@ -1,5 +1,5 @@
 export interface Clubes {
-    docs:          Doc[];
+    docs:          Club[];
     totalDocs:     number;
     limit:         number;
     totalPages:    number;
@@ -11,7 +11,7 @@ export interface Clubes {
     nextPage:      null;
 }
 
-export interface Doc {
+export interface Club {
     id:                 string;
     nombre:             string;
     logo:               Logo;
@@ -29,7 +29,7 @@ export interface Doc {
 export interface Logo {
     id:        string;
     filename:  string;
-    mimeType:  MIMEType;
+    mimeType:  string;
     filesize:  number;
     width:     number;
     height:    number;
@@ -37,11 +37,6 @@ export interface Logo {
     createdAt: Date;
     updatedAt: Date;
     url:       string;
-}
-
-export enum MIMEType {
-    ImageJPEG = "image/jpeg",
-    ImagePNG = "image/png",
 }
 
 export interface Sizes {
@@ -53,7 +48,7 @@ export interface Sizes {
 export interface Card {
     width:    number | null;
     height:   number | null;
-    mimeType: MIMEType | null;
+    mimeType: null | string;
     filesize: number | null;
     filename: null | string;
     url?:     string;
@@ -61,23 +56,35 @@ export interface Card {
 
 export interface Proyecto {
     nombre_proyecto:      string;
-    descripcion_proyecto: string;
-    imagen_proyecto:      Logo;
+    descripcion_proyecto: Descripcion[];
     id:                   string;
 }
 
+export interface Descripcion {
+    children:    DescripcionProyectoChild[];
+    type?:       string;
+    relationTo?: string;
+    value?:      Logo;
+}
+
+export interface DescripcionProyectoChild {
+    text?:     string;
+    children?: ChildChild[];
+    type?:     string;
+}
+
+export interface ChildChild {
+    text: string;
+}
+
 export interface RedesSociale {
-    link_fb:    string;
-    link_insta: string;
-    link_x:     string;
-    github:     string;
-    pagina_web: string;
+    nombre_red: string;
+    link_red:   string;
     id:         string;
 }
 
 export interface Servicio {
     nombre_servicio:      string;
-    descripcion_servicio: string;
-    imagen_servicio:      Logo;
+    descripcion_servicio: Descripcion[];
     id:                   string;
 }

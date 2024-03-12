@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../services/api.service';
-import { Doc } from 'src/app/interfaces/Clubes';
+import { Club } from 'src/app/interfaces/Clubes';
 import { environment } from 'src/environment/environment';
 
 @Component({
@@ -10,7 +10,7 @@ import { environment } from 'src/environment/environment';
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent implements OnInit {
-  clubes: Doc[] = [];
+  clubes: Club[] = [];
   apiUrl = environment.baseMediaUrl; //server
   clubNombre: string = '';
 

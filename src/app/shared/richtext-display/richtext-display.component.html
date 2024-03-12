@@ -1,0 +1,26 @@
+<ng-container *ngFor="let node of content">
+    <ng-container *ngIf="isTextNode(node); else blockNode">
+        <span [innerHTML]="getSafeHtml(node.text)"
+          [class.bold]="node.bold"
+          [class.italic]="node.italic"
+          [class.underline]="node.underline"
+          [class.strikethrough]="node.strikethrough">
+        </span>
+    </ng-container>
+    <ng-template #blockNode>
+        <ng-container [ngSwitch]="node.type">
+            <h1 class="text-4xl" *ngSwitchCase="'h1'"><app-richtext-display [content]="node.children"></app-richtext-display></h1>
+            <h2 class="text-3xl" *ngSwitchCase="'h2'"><app-richtext-display [content]="node.children"></app-richtext-display></h2>
+            <h3 class="text-2xl" *ngSwitchCase="'h3'"><app-richtext-display [content]="node.children"></app-richtext-display></h3>
+            <h4 class="text-xl" *ngSwitchCase="'h4'"><app-richtext-display [content]="node.children"></app-richtext-display></h4>
+            <h5 class="text-lg" *ngSwitchCase="'h5'"><app-richtext-display [content]="node.children"></app-richtext-display></h5>
+            <h6 class="text-base" *ngSwitchCase="'h6'"><app-richtext-display [content]="node.children"></app-richtext-display></h6>
+            <ul class="max-w-md space-y-1  list-disc list-inside" *ngSwitchCase="'ul'"><app-richtext-display [content]="node.children"></app-richtext-display></ul>
+            <ol class="max-w-md space-y-1  list-decimal list-inside" *ngSwitchCase="'ol'"><app-richtext-display [content]="node.children"></app-richtext-display></ol>
+            <li *ngSwitchCase="'li'"><app-richtext-display [content]="node.children"></app-richtext-display></li>
+            <img *ngSwitchCase="'upload'" [src]="apiUrl + node.value.sizes.tablet.url" alt="">
+            <a class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic" *ngSwitchCase="'link'" [href]="node.url" target="_blank" rel="noopener noreferrer"><app-richtext-display [content]="node.children"></app-richtext-display></a>
+            <p *ngSwitchDefault><app-richtext-display [content]="node.children"></app-richtext-display></p>
+        </ng-container>
+    </ng-template>
+</ng-container>

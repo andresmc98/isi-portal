@@ -12,14 +12,14 @@ export class FooterComponent {
       info: 'Avenida Universidad con Calle de la Sabiduría, Edificio 5J, Planta Baja. Hermosillo, Son.',
     },
     {
-      enlace: 'mailto:departamentoisi@unison.mx',
+      enlace: 'mailto:rene.navarro@unison.mx',
       icono: 'email',
-      info: 'departamentoisi@unison.mx',
+      info: 'rene.navarro@unison.mx',
     },
     {
-      enlace: 'tel:662-992-20-94',
+      enlace: 'tel:662-259-2283 ',
       icono: 'call',
-      info: '662-992-20-94',
+      info: '662-259-2283 ',
     },
   ];
   social = [
