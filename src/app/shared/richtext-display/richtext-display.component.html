@@ -1,4 +1,3 @@
-
 <ng-container *ngFor="let node of content">
     <ng-container *ngIf="isTextNode(node); else blockNode">
         <span [innerHTML]="getSafeHtml(node.text)"
@@ -19,7 +18,8 @@
             <ul class="max-w-md space-y-1  list-disc list-inside" *ngSwitchCase="'ul'"><app-richtext-display [content]="node.children"></app-richtext-display></ul>
             <ol class="max-w-md space-y-1  list-decimal list-inside" *ngSwitchCase="'ol'"><app-richtext-display [content]="node.children"></app-richtext-display></ol>
             <li *ngSwitchCase="'li'"><app-richtext-display [content]="node.children"></app-richtext-display></li>
-            <img *ngSwitchCase="'upload'" [src]="apiUrl + node.value.sizes.thumbnail.url" alt="">
+            <img *ngSwitchCase="'upload'" [src]="apiUrl + node.value.sizes.tablet.url" alt="">
+            <a class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic" *ngSwitchCase="'link'" [href]="node.url" target="_blank" rel="noopener noreferrer"><app-richtext-display [content]="node.children"></app-richtext-display></a>
             <p *ngSwitchDefault><app-richtext-display [content]="node.children"></app-richtext-display></p>
         </ng-container>
     </ng-template>

@@ -22,7 +22,7 @@ export class FaqComponent implements OnInit {
       (res: any) => {
         this.faqs = res.docs;
         this.faqs.forEach((faq: FAQ) => {
-          faq.respuesta = faq.respuesta.replace(/­/g, '<br>');
+          //faq.respuesta = faq.respuesta.replace(/­/g, '<br>');
           return faq;
         });
         console.log(this.faqs)
