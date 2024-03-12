@@ -52,8 +52,8 @@ export class ApiService {
     return this.http.get<any>(this.API_URL + 'media/' + id);
   }
 
-  getNoticias(): Observable<Noticias> {
-    return this.http.get<Noticias>(this.API_URL + 'noticias');
+  getNoticias(): Observable<any> {
+    return this.http.get<any>(this.API_URL + 'noticias');
   }
 
   getNoticiaById(id: string): Observable<Noticia> {
