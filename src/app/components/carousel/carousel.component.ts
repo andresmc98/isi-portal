@@ -33,26 +33,43 @@ export class CarouselComponent implements AfterViewInit {
     this.showCurrentSlide();
     this.autoNextSlide();
 
+    // Actualizar los indicadores después de que Angular haya completado la detección de cambios
+    setTimeout(() => {
+      this.updateIndicators();
+    }, 0);
+
+
   }
 
   nextSlide() {
     clearInterval(this.intervalId);
-    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length; //Modificar el número 3 por la cantidad de slides que tengas
+    const nextIndex = (this.currentSlideIndex + 1) % this.slides.length;
+    //this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length; //Modificar el número 3 por la cantidad de slides que tengas
+    this.currentSlideIndex = nextIndex;
     this.updateIndicators();
     this.showCurrentSlide();
   }
 
   prevSlide() {
     clearInterval(this.intervalId);
-    this.currentSlideIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
+    const prevIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
+    this.currentSlideIndex = prevIndex;
+    //this.currentSlideIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
     this.updateIndicators();
     this.showCurrentSlide();
   }
 
-  goToSlide(index: number){
+  goToSlide(index: number) {
+    clearTimeout(this.intervalId); // Cancela el temporizador actual
     this.currentSlideIndex = index;
     this.updateIndicators();
     this.showCurrentSlide();
+    this.secondsRemaining = 8; // Reinicia el contador de segundos
+    this.manualInteraction = true; // Establece que ha habido interacción manual
+    setTimeout(() => {
+      this.manualInteraction = false; // Restablece la interacción manual después de un breve retraso
+      this.autoNextSlide(); // Reinicia el temporizador
+    }, 100); // Se espera un breve retraso antes de reiniciar el temporizador
   }
 
   updateIndicators() {
@@ -71,11 +88,58 @@ export class CarouselComponent implements AfterViewInit {
     });
   }
 
-  autoNextSlide(){
-    setInterval(() => {
-      this.nextSlide();
-    }, 5000);
+  // showCurrentSlide2() {
+  //   const slides = document.querySelectorAll('.carousel-slide') as NodeListOf<HTMLElement>;
+  
+  //   slides.forEach((slide: HTMLElement, index: number) => {
+  //     if (index === this.currentSlideIndex) {
+  //       slide.style.transform = 'translateX(0%)'; // Slide actual visible
+  //     } else {
+  //       const distance = (index - this.currentSlideIndex) * 100; // Distancia para deslizar
+  //       slide.style.transform = `translateX(${distance}%)`; // Aplicar deslizamiento
+  //     }
+  //   });
+  // }
+  
+
+
+  private secondsRemaining = 8; // El intervalo se establece en 8 segundos  
+  private manualInteraction = false;
+  autoNextSlide() {
+    const interval = () => {
+      this.intervalId = setTimeout(() => {
+        this.secondsRemaining--; // Reduce el número de segundos restantes
+        if (this.secondsRemaining <= 0) {
+          this.nextSlide(); // Cambia de diapositiva automáticamente
+          this.secondsRemaining = 8; // Reinicia el contador de segundos
+        }
+        if (!this.manualInteraction) {
+          interval(); // Llama recursivamente a la función para mantener el temporizador activo
+        }
+      }, 1000); // Se ejecuta cada segundo (1000 ms)
+    };
+    interval(); // Inicia la recursión
   }
 
+  manualNextSlide() {
+    clearTimeout(this.intervalId); // Cancela el temporizador actual
+    this.nextSlide(); // Cambia de diapositiva manualmente
+    this.secondsRemaining = 8; // Reinicia el contador de segundos
+    this.manualInteraction = true; // Establece que ha habido interacción manual
+    setTimeout(() => {
+      this.manualInteraction = false; // Restablece la interacción manual después de un breve retraso
+      this.autoNextSlide(); // Reinicia el temporizador
+    }, 100); // Se espera un breve retraso antes de reiniciar el temporizador
+  }
 
+  manualPrevSlide() {
+    clearTimeout(this.intervalId); // Cancela el temporizador actual
+    this.prevSlide(); // Cambia de diapositiva manualmente
+    this.secondsRemaining = 8; // Reinicia el contador de segundos
+    this.manualInteraction = true; // Establece que ha habido interacción manual
+    setTimeout(() => {
+      this.manualInteraction = false; // Restablece la interacción manual después de un breve retraso
+      this.autoNextSlide(); // Reinicia el temporizador
+    }, 100); // Se espera un breve retraso antes de reiniciar el temporizador
+  }
 }
