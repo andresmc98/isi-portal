@@ -42,18 +42,16 @@ export interface Sizes {
 }
 
 export interface Card {
-    width:    number | null;
-    height:   number | null;
-    mimeType: null | string;
-    filesize: number | null;
-    filename: null | string;
-    url?:     string;
+    width:    number;
+    height:   number;
+    mimeType: string;
+    filesize: number;
+    filename: string;
+    url:      string;
 }
 
 export interface RedesSociale {
-    link_insta: string;
-    link_x:     string;
-    github:     string;
-    linkedin:   string;
-    id:         string;
+    nombre_red?: string;
+    link_red?:   string;
+    id:          string;
 }

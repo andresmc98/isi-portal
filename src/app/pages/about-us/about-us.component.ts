@@ -14,7 +14,7 @@ export class AboutUsComponent implements OnInit{
 
   mediaUs: Media = {} as Media;
   devs: Dev [] = [];
-  usPhoto = '65dfa8d92fdc50ead6b582d4'
+  usPhoto = '65f0bdb9525e34f445d04304'
   apiUrl = environment.baseMediaUrl; //server
 
   constructor(private apiservice: ApiService) { }
