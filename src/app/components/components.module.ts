@@ -8,11 +8,11 @@ import { SliderComponent } from './slider/slider.component';
 
 import { SharedModule } from '../shared/shared.module';
 import { CarouselComponent } from './carousel/carousel.component';
-
+import { ColorTagComponent } from './color-tag/color-tag.component';
 
 @NgModule({
-  declarations: [SliderComponent, CarouselComponent],
+  declarations: [SliderComponent, CarouselComponent, ColorTagComponent],
   imports: [CommonModule, RouterModule, CarouselModule.forRoot(), SharedModule],
-  exports: [SliderComponent, CarouselComponent],
+  exports: [SliderComponent, CarouselComponent, ColorTagComponent],
 })
 export class ComponentsModule {}

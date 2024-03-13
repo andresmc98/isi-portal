@@ -1,64 +1,66 @@
-<mat-drawer-container class="h-screen">
-  <!-- Contenido del drawer (barra lateral) -->
-  <!-- Banner unison -->
-  <mat-drawer #drawer position="end" class="w-80">
-    <div class="bg-unison-blue p-4 text-center">
-      <p class="text-unison-yellow font-black text-4xl">UNISON</p>
-    </div>
-
-    <!-- Navbar -->
-    <mat-nav-list>
-      <a mat-list-item routerLink="/">
-        <mat-icon class="mr-4 align-middle">home</mat-icon>
-        <span>Home</span>
-      </a>
-      <a mat-list-item routerLink="/noticias">
-        <mat-icon class="mr-4 align-middle">article</mat-icon>
-        <span>Noticias</span>
-      </a>
-      <a mat-list-item routerLink="/maestros">
-        <mat-icon class="mr-4 align-middle">school</mat-icon>
-        <span>Maestros</span>
-      </a>
-      <a mat-list-item routerLink="/materias">
-        <mat-icon class="mr-4 align-middle">book</mat-icon>
-        <span>Materias</span>
-      </a>
-      <a mat-list-item routerLink="/nosotros">
-        <mat-icon class="mr-4 align-middle">people</mat-icon>
-        <span>Nosotros</span>
-      </a>
-    </mat-nav-list>
-  </mat-drawer>
-
-  <!-- Contenido principal -->
-  <mat-drawer-content>
-    <mat-toolbar class="!bg-unison-blue flex justify-between !w-full !h-20">
-      <!-- Banner -->
-      <div class="flex w-40 justify-between">
-        <img
-          src="../../../assets/logo-unison.png"
-          alt="Logotipo de la Universidad de Sonora"
-          class="w-16"
-        />
-        <div class="bg-unison-yellow w-1"></div>
-        <img
-          src="../../../assets/logo-isi.png"
-          alt="Logotipo de la carrera de Ingeniería en Sistemas de Información"
-          class="w-16"
-        />
+<div class="bg-gray-200">
+  <mat-drawer-container class="h-screen max-w-[1920px] mx-auto">
+    <!-- Contenido del drawer (barra lateral) -->
+    <!-- Banner unison -->
+    <mat-drawer #drawer position="end" class="w-80">
+      <div class="bg-unison-blue p-4 text-center">
+        <p class="text-unison-yellow font-black text-4xl">UNISON</p>
       </div>
-      <button mat-icon-button (click)="drawer.toggle()">
-        <mat-icon class="scale-150" fontIcon="menu"></mat-icon>
-      </button>
-    </mat-toolbar>
 
-    <!-- Carga del contenido, dinamico -->
-    <router-outlet>
-      <!-- Contenido principal de la página -->
-    </router-outlet>
+      <!-- Navbar -->
+      <mat-nav-list>
+        <a mat-list-item routerLink="/">
+          <mat-icon class="mr-4 align-middle">home</mat-icon>
+          <span>Home</span>
+        </a>
+        <a mat-list-item routerLink="/noticias">
+          <mat-icon class="mr-4 align-middle">article</mat-icon>
+          <span>Noticias</span>
+        </a>
+        <a mat-list-item routerLink="/maestros">
+          <mat-icon class="mr-4 align-middle">school</mat-icon>
+          <span>Maestros</span>
+        </a>
+        <a mat-list-item routerLink="/materias">
+          <mat-icon class="mr-4 align-middle">book</mat-icon>
+          <span>Materias</span>
+        </a>
+        <a mat-list-item routerLink="/nosotros">
+          <mat-icon class="mr-4 align-middle">people</mat-icon>
+          <span>Nosotros</span>
+        </a>
+      </mat-nav-list>
+    </mat-drawer>
 
-    <!-- Footer -->
-    <app-footer></app-footer>
-  </mat-drawer-content>
-</mat-drawer-container>
+    <!-- Contenido principal -->
+    <mat-drawer-content>
+      <mat-toolbar class="!bg-unison-blue flex justify-between !w-full !h-20">
+        <!-- Banner -->
+        <div class="flex w-40 justify-between cursor-pointer" routerLink="/">
+          <img
+            src="../../../assets/logo-unison.png"
+            alt="Logotipo de la Universidad de Sonora"
+            class="w-16"
+          />
+          <div class="bg-unison-yellow w-1"></div>
+          <img
+            src="../../../assets/logo-isi.png"
+            alt="Logotipo de la carrera de Ingeniería en Sistemas de Información"
+            class="w-16"
+          />
+        </div>
+        <button mat-icon-button (click)="drawer.toggle()">
+          <mat-icon class="scale-150" fontIcon="menu"></mat-icon>
+        </button>
+      </mat-toolbar>
+
+      <!-- Carga del contenido, dinamico -->
+      <router-outlet>
+        <!-- Contenido principal de la página -->
+      </router-outlet>
+
+      <!-- Footer -->
+      <app-footer class="sticky top-[100vh]"></app-footer>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
