@@ -6,7 +6,7 @@
                 <ul class="flex flex-wrap">
                     <li class="carousel-slide w-full md:w-1/2 lg:w-1/3 xl:w-1/4"
                         *ngFor="let slide of slides; let i = index"
-                        [ngStyle]="{ 'transform': i === currentSlideIndex ? 'translateX(0)' : 'translateX(100%)', 'transition': 'transform 0.5s ease-in-out' }">
+                        [ngStyle]="{ 'transform': i === currentSlideIndex ? 'translateX(0)' : 'translate-x-full'}">
                         <img class="w-full h-80 object-cover md:h-auto lg:h-auto xl:h-auto" [src]="slide.imageUrl"
                             alt="">
                         <div class="absolute bottom-0 left-0 w-full px-2 py-1 bg-unison-yellow-dark/70">
@@ -19,13 +19,13 @@
             <!--Flechas-->
             <div class="absolute flex h-full w-full top-0 left-0">
                 <div class="my-auto w-full flex justify-between">
-                    <button class="relative z-10" (click)="prevSlide()">
+                    <button class="relative z-10" (click)="manualNextSlide(); nextSlide()">
                         <span
                             class="bg-unison-yellow-light bg-opacity-75 rounded-full w-9 h-9 flex ml-2 md:ml-6 lg:ml-10">
                             <i class="iconoir-fast-arrow-left text-unison-blue-dark text-4xl"></i>
                         </span>
                     </button>
-                    <button class="relative z-10" (click)="nextSlide()">
+                    <button class="relative z-10" (click)="manualPrevSlide(); prevSlide()">
                         <span
                             class="bg-unison-yellow-light bg-opacity-75 rounded-full w-9 h-9 flex mr-2 md:mr-6 lg:mr-10">
                             <i class="iconoir-fast-arrow-right text-unison-blue-dark text-4xl"></i>
@@ -42,4 +42,3 @@
             [ngClass]="{'bg-unison-blue-dark': active}">
         </div>
     </div>
-</div>
