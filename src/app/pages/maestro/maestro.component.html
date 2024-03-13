@@ -1,53 +1,110 @@
-<div>
+<div class="m-4">
   <app-title title="{{ maestro.nombre }}"></app-title>
-  <div class="photo-info">
-    <img [src]="apiUrl + maestro.foto.sizes.tablet.url" alt="" />
-    <div>
-      <p>Correo: {{ maestro.contacto[0].correo_inst }}</p>
-      <p>Cubiculo: {{ maestro.contacto[0].cubiculo }}</p>
-      <p>Redes:</p>
-      <!-- <div class="redes">
-        <a
-          href="{{ maestro.contacto[0].linkedin }}"
-          target=""
-          *ngIf="maestro.contacto[0].linkedin"
+  <!-- Photo and general info -->
+  <div class="flex mt-3">
+    <img [src]="apiUrl + maestro.foto.url" alt="" class="w-1/2" />
+    <div class="px-4">
+      <p class="font-bold">
+        Correo:
+        <span class="font-normal"
+          ><a href="mailto:{{ maestro.contacto[0].correo_inst }}">{{
+            maestro.contacto[0].correo_inst
+          }}</a></span
         >
-          <mat-icon>facebook</mat-icon>
-        </a>
+      </p>
+      <p class="font-bold">
+        Cubiculo:
+        <span class="font-normal">
+          {{ maestro.contacto[0].cubiculo }}
+        </span>
+      </p>
+      <p class="font-bold">Redes:</p>
+      <div class="flex justify-around w-full mt-2">
         <a
-          href="{{ maestro.contacto[0].github }}"
-          target=""
-          *ngIf="maestro.contacto[0].github"
+          [href]="item.link_red"
+          *ngFor="let item of maestro.redes_sociales"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <mat-icon>facebook</mat-icon>
+          <i class="iconoir-{{ item.nombre_red }} text-2xl"></i>
         </a>
-        <a
-          href="{{ maestro.contacto[0].pagina_web }}"
-          target=""
-          *ngIf="maestro.contacto[0].pagina_web"
-        >
-          <mat-icon>facebook</mat-icon>
-        </a>
-      </div> -->
+      </div>
     </div>
   </div>
+
+  <!-- Academic formation -->
   <div>
     <app-title title="Formación académica"></app-title>
-    <div *ngFor="let formacion of maestro.formacion_academica">
-      <h1>Institución: {{ formacion.nombre_institucion }}</h1>
-      <p>Certificación: {{ formacion.certificacion }}</p>
-      <p>Fecha de obtención: {{ formacion.fecha_obtencion }}</p>
+    <div
+      *ngFor="let formacion of maestro.formacion_academica"
+      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
+    >
+      <p class="font-bold">
+        Institución:
+        <span class="font-normal"> {{ formacion.nombre_institucion }} </span>
+      </p>
+      <p class="font-bold">
+        Certificación:
+        <span class="font-normal"> {{ formacion.certificacion }}</span>
+      </p>
+      <p class="font-bold">
+        Fecha de obtención:
+        <span class="font-normal"> {{ formacion.fecha_obtencion }} </span>
+      </p>
     </div>
-    <app-title title="Experiencia laboral"></app-title>
+  </div>
 
-    <div *ngFor="let experiencia of maestro.experiencia_laboral">
-      <h1>Nombre de la empresa: {{ experiencia.nombre_empresa }}</h1>
-      <p>Descripción: {{ experiencia.descripcion_exp }}</p>
+  <!-- Laboral experience -->
+  <div>
+    <app-title title="Experiencia laboral"></app-title>
+    <div
+      *ngFor="let experiencia of maestro.experiencia_laboral"
+      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
+    >
+      <p class="font-bold">
+        {{ experiencia.nombre_empresa }}
+      </p>
+      <p>
+        {{ experiencia.descripcion_exp }}
+      </p>
+      <div>
+        <p>
+          {{ experiencia.fecha_inicio | date : "dd MMM, yyyy" }} a
+          {{ experiencia.fecha_fin | date : "dd MMM, yyyy" }}
+        </p>
+      </div>
     </div>
-    <app-title title="Proyectos e investigaciones"></app-title>
-    <div *ngFor="let proyecto of maestro.proyectos">
-      <h1>Nombre del proyecto: {{ proyecto.nombre_proyecto }}</h1>
-      <p>Descripción del proyecto: {{ proyecto.descripcion_proyecto }}</p>
+  </div>
+
+  <!-- Projects -->
+  <div>
+    <app-title title="Proyectos"></app-title>
+    <div
+      *ngFor="let proyecto of maestro.proyectos"
+      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
+    >
+      <p class="font-bold">
+        {{ proyecto.nombre_proyecto }}
+      </p>
+      <app-richtext-display
+        [content]="proyecto.descripcion_proyecto"
+      ></app-richtext-display>
+    </div>
+  </div>
+
+  <!-- Investigations -->
+  <div>
+    <app-title title="Investigaciones"></app-title>
+    <div
+      *ngFor="let investigacion of maestro.investigaciones"
+      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
+    >
+      <p class="font-bold">
+        {{ investigacion.nombre_inv }}
+      </p>
+      <app-richtext-display
+        [content]="investigacion.descripcion_inv"
+      ></app-richtext-display>
     </div>
   </div>
 </div>
