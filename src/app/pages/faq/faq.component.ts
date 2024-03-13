@@ -22,8 +22,11 @@ export class FaqComponent implements OnInit {
       (res: any) => {
         this.faqs = res.docs;
         this.faqs.forEach((faq: FAQ) => {
-          //faq.respuesta = faq.respuesta.replace(/­/g, '<br>');
-          return faq;
+          // Imprimir el texto de la respuesta
+          console.log("Pregunta: ", faq.pregunta);
+          faq.respuesta.forEach((respuesta, index) => {
+            console.log("Respuesta " + (index + 1) + ": ", respuesta.children);
+          });
         });
         console.log(this.faqs)
       },
@@ -32,11 +35,6 @@ export class FaqComponent implements OnInit {
       }
     );
   }
-
-
-
-
-
 
   toggleContent(index: number) {
     const contenido = document.getElementById('contenido-' + index);
@@ -47,5 +45,4 @@ export class FaqComponent implements OnInit {
       arrowIcon.classList.toggle('rotate-180');
     }
   }
-
 }

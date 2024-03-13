@@ -7,22 +7,26 @@
         <div *ngFor="let faq of faqs; let i = index" class="static">
             <div class="mt-1 flex justify-center"> <!-- Reducido el espacio vertical entre las preguntas -->
                 <!--Faq-->
-                <div class="bg-clip-border border-1 border-unison-blue overflow-y-scroll relative w-full max-w-[100%] max-h-[100%] mx-4 md:mx-auto shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15), -6px_-6px_10px_-1px_rgba(255,255,255,0.8)] rounded-xl m-[15px] mx-auto object-cover">
+                <div
+                    class="bg-clip-border border-1 border-unison-blue overflow-y-scroll relative w-full max-w-[100%] max-h-[100%] mx-4 md:mx-auto shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15), -6px_-6px_10px_-1px_rgba(255,255,255,0.8)] rounded-xl m-[15px] mx-auto object-cover">
 
                     <!--Input checkbox-->
                     <input type="checkbox" [id]="'input-' + i" class="absolute peer opacity-0">
 
                     <!--Heading-->
-                    <label [for]="'input-' + i" class="font-bold tracking-[1px] mx-[20px] h-[50px] flex items-center" for="input"> {{ faq.pregunta }}
+                    <label [for]="'input-' + i" class="font-bold tracking-[1px] mx-[20px] h-[50px] flex items-center"
+                        for="input"> {{ faq.pregunta }}
                     </label>
 
                     <!--Arrow-->
-                    <div [id]="'arrow-' + i" class="absolute top-[10px] right-[5px] peer-checked:rotate-180 duration-200 cursor-pointer" (click)="toggleContent(i)">
+                    <div [id]="'arrow-' + i"
+                        class="absolute top-[10px] right-[5px] peer-checked:rotate-180 duration-200 cursor-pointer"
+                        (click)="toggleContent(i)">
                         <i [id]="'arrow-icon-' + i" class="iconoir-nav-arrow-down"></i>
                     </div>
-                    <!--Contenido-->
-                    <div [id]="'contenido-' + i" class="max-h-0 overflow-hidden peer-checked:max-h-full">
-                        <p class="p-[20px] text-justify w-full h-full" [innerHTML]="faq.respuesta"></p>
+
+                    <div class="max-h-0 overflow-hidden peer-checked:max-h-full ml-4 mt-3">
+                        <app-richtext-display [content]="faq.respuesta"></app-richtext-display>
                     </div>
                 </div>
             </div>
