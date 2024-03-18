@@ -48,6 +48,19 @@ export class CarouselComponent implements AfterViewInit {
     this.currentSlideIndex = nextIndex;
     this.updateIndicators();
     this.showCurrentSlide();
+
+    // Remover la clase de animación de la imagen actual
+    const currentSlide = document.querySelector('.carousel-slide:not(.hidden) img');
+    if (currentSlide) {
+      currentSlide.classList.remove('animate-fade-right');
+      currentSlide.classList.remove('animate-fade-left');
+    }
+
+    // Agregar la clase de animación a la siguiente imagen
+    const nextSlide = document.querySelector(`.carousel-slide:nth-child(${nextIndex + 1}) img`);
+    if (nextSlide) {
+      nextSlide.classList.add('animate-fade-right');
+    }
   }
 
   prevSlide() {
@@ -57,6 +70,19 @@ export class CarouselComponent implements AfterViewInit {
     //this.currentSlideIndex = (this.currentSlideIndex - 1 + this.slides.length) % this.slides.length;
     this.updateIndicators();
     this.showCurrentSlide();
+
+    // Remover la clase de animación de la imagen actual
+    const currentSlide = document.querySelector('.carousel-slide:not(.hidden) img');
+    if (currentSlide) {
+      currentSlide.classList.remove('animate-fade-right');
+      currentSlide.classList.remove('animate-fade-left');
+    }
+
+    // Agregar la clase de animación a la siguiente imagen
+    const prevSlide = document.querySelector(`.carousel-slide:nth-child(${prevIndex + 1}) img`);
+    if (prevSlide) {
+      prevSlide.classList.add('animate-fade-left');
+    }
   }
 
   goToSlide(index: number) {
@@ -87,22 +113,6 @@ export class CarouselComponent implements AfterViewInit {
       }
     });
   }
-
-  // showCurrentSlide2() {
-  //   const slides = document.querySelectorAll('.carousel-slide') as NodeListOf<HTMLElement>;
-  
-  //   slides.forEach((slide: HTMLElement, index: number) => {
-  //     if (index === this.currentSlideIndex) {
-  //       slide.style.transform = 'translateX(0%)'; // Slide actual visible
-  //     } else {
-  //       const distance = (index - this.currentSlideIndex) * 100; // Distancia para deslizar
-  //       slide.style.transform = `translateX(${distance}%)`; // Aplicar deslizamiento
-  //     }
-  //   });
-  // }
-  
-
-
   private secondsRemaining = 8; // El intervalo se establece en 8 segundos  
   private manualInteraction = false;
   autoNextSlide() {
