@@ -1,89 +1,82 @@
-<div class="mx-4">
-  <app-title title="Maestros de carrera"></app-title>
-  <div
-    class="mt-3 grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"
-  >
-    <div *ngFor="let maestro of maestros">
-      <div
-        class="flex flex-row w-auto p-3 bg-slate-100 rounded-xl drop-shadow-xl"
-      >
-        <img
-          [src]="apiUrl + maestro.foto.url"
-          alt=""
-          class="w-1/2 cursor-pointer"
-          [routerLink]="['/maestros/' + maestro.id]"
-        />
-        <div class="px-3 space-y-2">
-          <p class="font-medium text-xl">{{ maestro.nombre }}</p>
-          <p class="text-lg">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
+<div class="m-4">
+  <section>
+    <app-title title="Maestros de carrera"></app-title>
+    <div
+      class="mt-2 grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"
+    >
+      <div *ngFor="let maestro of maestros">
+        <div
+          class="flex flex-row w-auto p-3 bg-slate-100 rounded-xl drop-shadow-xl"
+        >
+          <img
+            [src]="apiUrl + maestro.foto.url"
+            alt=""
+            class="w-1/2 cursor-pointer"
+            [routerLink]="['/maestros/' + maestro.id]"
+          />
+          <div class="px-3 space-y-2">
+            <p class="font-medium text-xl">{{ maestro.nombre }}</p>
+            <p class="text-lg">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
 
-          <!-- Añadir si hace falta 👇🏽 -->
-          <!-- <p
+            <!-- Añadir si hace falta 👇🏽 -->
+            <!-- <p
             [routerLink]="['/maestros/' + maestro.id]"
             class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic text-right"
           >
             Conoce más
           </p> -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <app-title title="Maestros de ingenería"></app-title>
-  <div
-    class="mt-3 grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"
-  >
-    <div *ngFor="let maestro of maestros">
-      <div
-        class="flex flex-row w-auto p-3 bg-slate-100 rounded-xl drop-shadow-xl"
-      >
-        <img
-          [src]="apiUrl + maestro.foto.url"
-          alt=""
-          class="w-1/2 cursor-pointer"
-          [routerLink]="['/maestros/' + maestro.id]"
-        />
-        <div class="px-3 space-y-2">
-          <p class="font-medium text-xl">{{ maestro.nombre }}</p>
-          <p class="text-lg">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
-
-          <!-- Añadir si hace falta 👇🏽 -->
-          <!-- <p
+  </section>
+  <section class="mt-4">
+    <app-title title="Maestros de ingenería"></app-title>
+    <div
+      class="mt-2 grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"
+    >
+      <div *ngFor="let maestro of maestros">
+        <div
+          class="flex flex-row w-auto p-3 bg-slate-100 rounded-xl drop-shadow-xl"
+        >
+          <img
+            [src]="apiUrl + maestro.foto.url"
+            alt=""
+            class="w-1/2 cursor-pointer"
             [routerLink]="['/maestros/' + maestro.id]"
-            class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic text-right"
-          >
-            Conoce más
-          </p> -->
+          />
+          <div class="px-3 space-y-2">
+            <p class="font-medium text-xl">{{ maestro.nombre }}</p>
+            <p class="text-lg">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <app-title title="Maestros de tronco"></app-title>
-  <div
-    class="mt-3 grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"
-  >
-    <div *ngFor="let maestro of maestros">
-      <div
-        class="flex flex-row w-auto p-3 bg-slate-100 rounded-xl drop-shadow-xl"
-      >
-        <img
-          [src]="apiUrl + maestro.foto.url"
-          alt=""
-          class="w-1/2 cursor-pointer"
-          [routerLink]="['/maestros/' + maestro.id]"
-        />
-        <div class="px-3 space-y-2">
-          <p class="font-medium text-xl">{{ maestro.nombre }}</p>
-          <p class="text-lg">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
-
-          <!-- Añadir si hace falta 👇🏽 -->
-          <!-- <p
+  </section>
+  <section class="mt-4">
+    <app-title title="Maestros de tronco"> </app-title>
+    <div
+      class="mt-2 grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"
+    >
+      <div *ngFor="let maestro of maestros">
+        <div
+          class="flex flex-row w-auto p-3 bg-slate-100 rounded-xl drop-shadow-xl"
+        >
+          <img
+            [src]="apiUrl + maestro.foto.url"
+            alt=""
+            class="w-1/2 cursor-pointer"
             [routerLink]="['/maestros/' + maestro.id]"
-            class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic text-right"
-          >
-            Conoce más
-          </p> -->
+          />
+          <div class="px-3 space-y-2">
+            <p class="font-medium text-xl">{{ maestro.nombre }}</p>
+            <p class="text-lg">Cubículo: {{ maestro.contacto[0].cubiculo }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </div>
+
+<!-- Añadir si hace falta 👇🏽 -->
+<!-- <p [routerLink]="['/maestros/' + maestro.id]" class="underline underline-offset-4 text-unison-blue-light mt-2 font-semibold italic text-right"> Conoce más</p> -->
