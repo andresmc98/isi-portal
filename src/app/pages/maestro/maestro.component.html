@@ -1,110 +1,111 @@
 <div class="m-4">
-  <app-title title="{{ maestro.nombre }}"></app-title>
-  <!-- Photo and general info -->
-  <div class="flex mt-3">
-    <img [src]="apiUrl + maestro.foto.url" alt="" class="w-1/2" />
-    <div class="px-4">
-      <p class="font-bold">
-        Correo:
-        <span class="font-normal"
-          ><a href="mailto:{{ maestro.contacto[0].correo_inst }}">{{
-            maestro.contacto[0].correo_inst
-          }}</a></span
-        >
-      </p>
-      <p class="font-bold">
-        Cubiculo:
-        <span class="font-normal">
-          {{ maestro.contacto[0].cubiculo }}
-        </span>
-      </p>
-      <p class="font-bold">Redes:</p>
-      <div class="flex justify-around w-full mt-2">
-        <a
-          [href]="item.link_red"
-          *ngFor="let item of maestro.redes_sociales"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="iconoir-{{ item.nombre_red }} text-2xl"></i>
-        </a>
+  <div class="grid gap-4 tablet:grid-cols-2 laptop:grid-cols-3">
+    <!-- Photo and general info -->
+    <section
+      class="tablet:col-span-2 tablet:grid tablet:grid-cols-3 tablet:gap-4"
+    >
+      <app-title
+        title="{{ maestro.nombre }}"
+        class="tablet:col-span-3"
+      ></app-title>
+      <div class="flex mt-3 tablet:flex-col">
+        <img
+          [src]="apiUrl + maestro.foto.url"
+          alt=""
+          class="w-1/2 tablet:w-full"
+        />
+        <div class="px-2 w-1/2 tablet:w-full">
+          <p class="font-bold">
+            Correo:
+            <span class="font-normal"
+              ><a href="mailto:{{ maestro.contacto[0].correo_inst }}">{{
+                maestro.contacto[0].correo_inst
+              }}</a></span
+            >
+          </p>
+          <p class="font-bold mt-1">
+            Cubiculo:
+            <span class="font-normal">
+              {{ maestro.contacto[0].cubiculo }}
+            </span>
+          </p>
+          <p class="font-bold mt-1">Redes:</p>
+          <div class="flex justify-around w-full mt-2">
+            <a
+              [href]="item.link_red"
+              *ngFor="let item of maestro.redes_sociales"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="iconoir-{{ item.nombre_red }} text-2xl"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+      <p class="mt-3 tablet:row-span-2 tablet:col-span-2">
+        {{ maestro.descripcion }}
+      </p>
+    </section>
 
-  <!-- Academic formation -->
-  <div>
-    <app-title title="Formación académica"></app-title>
-    <div
-      *ngFor="let formacion of maestro.formacion_academica"
-      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
-    >
-      <p class="font-bold">
-        Institución:
-        <span class="font-normal"> {{ formacion.nombre_institucion }} </span>
-      </p>
-      <p class="font-bold">
-        Certificación:
-        <span class="font-normal"> {{ formacion.certificacion }}</span>
-      </p>
-      <p class="font-bold">
-        Fecha de obtención:
-        <span class="font-normal"> {{ formacion.fecha_obtencion }} </span>
-      </p>
-    </div>
-  </div>
+    <!-- Academic formation -->
+    <section class="laptop:col-start-3">
+      <app-title title="Formación académica"></app-title>
+      <ul
+        *ngFor="let formacion of maestro.formacion_academica"
+        class="mt-2 pl-5 list-disc"
+      >
+        <li>
+          <p class="font-bold text-xl">
+            {{ formacion.certificacion }}
+          </p>
+          <p class="text-zinc-600 font-normal italic">
+            {{ formacion.nombre_institucion }} - {{ formacion.fecha_obtencion }}
+          </p>
+        </li>
+      </ul>
+    </section>
 
-  <!-- Laboral experience -->
-  <div>
-    <app-title title="Experiencia laboral"></app-title>
-    <div
-      *ngFor="let experiencia of maestro.experiencia_laboral"
-      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
-    >
-      <p class="font-bold">
-        {{ experiencia.nombre_empresa }}
-      </p>
-      <p>
-        {{ experiencia.descripcion_exp }}
-      </p>
-      <div>
-        <p>
+    <!-- Laboral experience -->
+    <section>
+      <app-title title="Experiencia laboral"></app-title>
+      <div *ngFor="let experiencia of maestro.experiencia_laboral" class="mt-2">
+        <p class="font-bold text-xl">
+          {{ experiencia.nombre_empresa }}
+        </p>
+        <p class="text-gray-500 font-light">
           {{ experiencia.fecha_inicio | date : "dd MMM, yyyy" }} a
           {{ experiencia.fecha_fin | date : "dd MMM, yyyy" }}
         </p>
+        <p>
+          {{ experiencia.descripcion_exp }}
+        </p>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Projects -->
-  <div>
-    <app-title title="Proyectos"></app-title>
-    <div
-      *ngFor="let proyecto of maestro.proyectos"
-      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
-    >
-      <p class="font-bold">
-        {{ proyecto.nombre_proyecto }}
-      </p>
-      <app-richtext-display
-        [content]="proyecto.descripcion_proyecto"
-      ></app-richtext-display>
-    </div>
-  </div>
+    <!-- Projects -->
+    <section>
+      <app-title title="Proyectos"></app-title>
+      <div *ngFor="let proyecto of maestro.proyectos" class="mt-2">
+        <p class="font-bold text-xl">
+          {{ proyecto.nombre_proyecto }}
+        </p>
+        <app-richtext-display
+          [content]="proyecto.descripcion_proyecto"
+        ></app-richtext-display>
+      </div>
+    </section>
 
-  <!-- Investigations -->
-  <div>
-    <app-title title="Investigaciones"></app-title>
-    <div
-      *ngFor="let investigacion of maestro.investigaciones"
-      class="mt-3 bg-unison-blue-light p-2 rounded-2xl hover:bg-unison-blue"
-    >
-      <p class="font-bold">
-        {{ investigacion.nombre_inv }}
-      </p>
-      <app-richtext-display
-        [content]="investigacion.descripcion_inv"
-      ></app-richtext-display>
-    </div>
+    <!-- Investigations -->
+    <section>
+      <app-title title="Investigaciones"></app-title>
+      <div *ngFor="let investigacion of maestro.investigaciones" class="mt-2">
+        <p class="font-bold text-xl">
+          {{ investigacion.nombre_inv }}
+        </p>
+        <app-richtext-display
+          [content]="investigacion.descripcion_inv"
+        ></app-richtext-display>
+      </div>
+    </section>
   </div>
 </div>
