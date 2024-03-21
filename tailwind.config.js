@@ -44,4 +44,5 @@ module.exports = {
     }),
     require('tailwindcss-animated'),
   ],
+  plugins: [require("tailwind-gradient-mask-image")]
 };
